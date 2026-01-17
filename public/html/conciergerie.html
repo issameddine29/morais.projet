@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service de Conciergerie - Morais Cleaning</title>
+    <meta name="description"
+        content="Service complet de conciergerie à Bruxelles : ménage, repassage, courses, garde d'animaux, organisation d'événements. Libérez votre temps avec notre service sur mesure.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    
+    <link rel="stylesheet" href="/public/css/components/whatsapp.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+    <style>
+        .concierge-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #0ea5e9;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        .premium-note {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .concierge-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .concierge-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .concierge-feature i {
+            color: #7dd3fc;
+            font-size: 1.2rem;
+        }
+
+        .type-concierge {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #0ea5e9;
+            transition: transform 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .type-concierge:hover {
+            transform: translateY(-5px);
+        }
+
+        .concierge-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0ea5e9, #7dd3fc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26, 54, 93, 0.92), rgba(26, 54, 93, 0.88));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-feature i {
+            font-size: 1.2rem;
+            color: #38bdf8;
+        }
+
+        .description-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .description-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .description-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .time-item {
+            border-left: 4px solid #0ea5e9;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .time-item h3 {
+            color: #0ea5e9;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-features {
+                gap: 20px;
+            }
+
+            .hero-feature {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .hero-bg-image {
+            filter: brightness(0.5);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .service-hero:hover .hero-bg-image {
+            transform: scale(1.02);
+            filter: brightness(0.55);
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #e6eefb;
+            max-width: 700px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 12px;
+            align-items: start;
+        }
+
+        .client-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+            text-align: left;
+            transition: transform .18s ease, box-shadow .18s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .client-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(2, 6, 23, 0.10);
+        }
+
+        .client-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+            color: #1e3a8a;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .client-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .client-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .client-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #475569;
+            background: rgba(15, 23, 42, 0.03);
+            padding: 4px 8px;
+            border-radius: 999px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .included-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .included-check {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #eef2ff;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .client-thumb img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .client-card {
+            padding: 18px;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 620px) {
+            .client-thumb img {
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+            }
+
+            .client-card {
+                padding: 14px;
+            }
+        }
+
+        .residential-badge {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+        }
+
+        .corporate-badge {
+            background: rgba(124, 58, 237, 0.1);
+            color: #7c3aed;
+        }
+
+        .event-badge {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
+        /* Services grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card.cleaning {
+            border-top-color: #0ea5e9;
+        }
+
+        .service-card.errands {
+            border-top-color: #10b981;
+        }
+
+        .service-card.personal {
+            border-top-color: #8b5cf6;
+        }
+
+        .service-card.events {
+            border-top-color: #f59e0b;
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .service-card.cleaning .service-icon {
+            background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+        }
+
+        .service-card.errands .service-icon {
+            background: linear-gradient(135deg, #10b981, #34d399);
+        }
+
+        .service-card.personal .service-icon {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+        }
+
+        .service-card.events .service-icon {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .service-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+            font-weight: bold;
+        }
+
+        /* Pricing table */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: #0ea5e9;
+        }
+
+        .pricing-card.popular {
+            border-color: #0ea5e9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: #0ea5e9;
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0ea5e9;
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #475569;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+    </style>
+    </head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Banner -->
+    <section class="service-hero">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Concierge professionnel organisant des services à domicile" class="hero-bg-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Service de Conciergerie Premium <span class="concierge-badge"><i
+                            class="fas fa-key"></i> Sur mesure</span></h1>
+
+                <p class="hero-subtitle">
+                    Libérez votre temps et simplifiez votre vie avec notre service de conciergerie complet à Bruxelles.
+                    Ménage, courses, repassage, organisation d'événements, garde d'animaux : nous gérons tout pour vous.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openChatbot('conciergerie')">
+                        <i class="fas fa-calendar-check"></i> Planifier un audit
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Parler à un conseiller
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="concierge-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Gain de temps garanti</span>
+                    </div>
+                    <div class="concierge-feature">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Personnel vérifié</span>
+                    </div>
+                    <div class="concierge-feature">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Service sur mesure</span>
+                    </div>
+                    <div class="concierge-feature">
+                        <i class="fas fa-headset"></i>
+                        <span>Disponible 7j/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description -->
+    <section class="section-white">
+        <div class="container">
+            <div class="description-content">
+                <div class="description-text">
+                    <h2>Votre assistant personnel à Bruxelles</h2>
+                    <p>Entre le travail, la famille et les obligations quotidiennes, il est difficile de tout gérer.
+                        Notre service de conciergerie vous offre le luxe du temps en prenant en charge toutes les tâches
+                        chronophages de votre vie quotidienne.</p>
+                    <p>Que vous soyez un professionnel surchargé, une famille active, ou un senior souhaitant maintenir
+                        son autonomie, notre équipe de concierges professionnels s'adapte à vos besoins spécifiques avec
+                        discrétion et efficacité.</p>
+                    <div class="time-item">
+                        <h3><i class="fas fa-chart-line"></i> Retour sur investissement</h3>
+                        <p>Notre service vous fait gagner en moyenne 10-15 heures par semaine. Utilisez ce temps pour ce
+                            qui compte vraiment : famille, loisirs, développement personnel.</p>
+                    </div>
+                </div>
+
+                <div class="description-image">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Concierge organisant un planning de services" loading="lazy" class="rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services inclus -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Nos services conciergerie</h2>
+            <div class="clients-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="client-thumb">
+                        <img src="https://www.leforem.be/content/leforemhe/fr/infos-metiers/metiers/k250101-1-concierge.coreimg.jpeg/structure/jcr%3acontent/root/pagebodycontainer/maincontainer/art_resp_simple/container/containerv2/imagev2/1673355050950/adobestock-2367837921.jpeg"
+                            alt="Concierge vérifiant une propriété avec tablette">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Surveillance & Visites</h3>
+                    <p>Visites régulières de vos locaux, vérification des ouvertures/fermetures, simulation de présence,
+                        rapport détaillé avec photos.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="client-thumb">
+                        <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Colis et paquets bien organisés">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-box"></i></div>
+                    <h3>Réception de Colis</h3>
+                    <p>Réception et stockage sécurisé de vos colis, courrier recommandé, gestion des retours en votre
+                        absence, inventaire détaillé.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="client-thumb">
+                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Arrosage soigneux de plantes d'intérieur">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Entretien des Plantes</h3>
+                    <p>Arrosage personnalisé selon chaque plante, fertilisation, rotation pour lumière optimale,
+                        dépoussiérage des feuilles.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="client-thumb">
+                        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Chien heureux avec son gardien">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-paw"></i></div>
+                    <h3>Garde d'Animaux</h3>
+                    <p>Visites quotidiennes pour vos animaux, nourrissage, promenades, soins vétérinaires si besoin,
+                        photos régulières envoyées.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="client-thumb">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Technicien vérifiant une installation">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Gestion Technique</h3>
+                    <p>Vérification des fuites d'eau, surveillance du chauffage/climatisation, gestion des pannes
+                        urgentes, coordination avec artisans.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="client-thumb">
+                        <img src="https://images.unsplash.com/photo-1583947581924-860bda6a26df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Nettoyage professionnel d'une cuisine">
+                    </div>
+                    <div class="service-icon"><i class="fas fa-broom"></i></div>
+                    <h3>Entretien Ménager</h3>
+                    <p>Nettoyage régulier, aération des pièces, gestion des déchets, changement de draps, maintien de
+                        propreté optimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processus -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <div class="method-steps">
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>1. Planification</h3>
+                    <p>Premier contact, évaluation de vos besoins, création d'un planning personnalisé, signature du
+                        contrat.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-key"></i></div>
+                    <h3>2. Remise des Clés</h3>
+                    <p>Remise sécurisée des clés (coffre sécurisé ou double clé), briefing détaillé sur vos consignes.
+                    </p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-tasks"></i></div>
+                    <h3>3. Intervention</h3>
+                    <p>Réalisation des services selon le planning, communication régulière, photos si demandé.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-file-alt"></i></div>
+                    <h3>4. Rapport & Bilan</h3>
+                    <p>Rapport détaillé à votre retour, restitution des clés, retour d'expérience, facturation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sécurité -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Notre engagement sécurité</h2>
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-check"><i class="fas fa-user-shield"></i></div>
+                    <div class="included-content">
+                        <h3>Personnel vérifié</h3>
+                        <p>Tous nos concierges sont soigneusement sélectionnés, avec vérification des antécédents et
+                            formation spécifique.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check"><i class="fas fa-file-contract"></i></div>
+                    <div class="included-content">
+                        <h3>Contrat & Assurance</h3>
+                        <p>Contrat détaillé avec engagement de confidentialité et assurance responsabilité civile
+                            professionnelle.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check"><i class="fas fa-lock"></i></div>
+                    <div class="included-content">
+                        <h3>Sécurité des clés</h3>
+                        <p>Système de double clé ou coffre-fort sécurisé. Traçabilité complète de chaque intervention.
+                        </p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check"><i class="fas fa-camera"></i></div>
+                    <div class="included-content">
+                        <h3>Transparence</h3>
+                        <p>Rapports détaillés avec photos (sur demande), journal de bord, historique des interventions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Comment assurez-vous la sécurité de mes clés ?</button>
+                    <div class="faq-answer">
+                        <p>Notre système de sécurité est multi-niveaux :</p>
+                        <ul>
+                            <li><strong>Coffre-fort sécurisé</strong> : Stockage dans nos locaux sécurisés 24h/24</li>
+                            <li><strong>Système de double clé</strong> : Option possible selon vos préférences</li>
+                            <li><strong>Traçabilité</strong> : Chaque manipulation de clés est enregistrée</li>
+                            <li><strong>Assurance</strong> : Couverture complète en cas de perte</li>
+                            <li><strong>Retour systématique</strong> : Les clés sont restituées personnellement à votre
+                                retour</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Puis-je modifier les services pendant mon absence ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, nous sommes flexibles :</p>
+                        <ul>
+                            <li><strong>Contact direct</strong> : Votre référent attitré disponible par
+                                téléphone/WhatsApp</li>
+                            <li><strong>Modifications possibles</strong> : Ajout ou suppression de services selon vos
+                                besoins</li>
+                            <li><strong>Urgences</strong> : Gestion des imprévus (fuite d'eau, panne, etc.)</li>
+                            <li><strong>Communication</strong> : Mises à jour régulières si souhaité</li>
+                            <li><strong>Facturation ajustée</strong> : Seuls les services effectués sont facturés</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous des services pour les entreprises ?</button>
+                    <div class="faq-answer">
+                        <p>Absolument, nos services s'adaptent aux professionnels :</p>
+                        <ul>
+                            <li><strong>Locaux professionnels</strong> : Bureaux, commerces, showrooms</li>
+                            <li><strong>Services spécifiques</strong> : Arrosage plantes d'intérieur, nettoyage, gestion
+                                du courrier</li>
+                            <li><strong>Flexibilité horaire</strong> : Interventions en soirée ou week-end</li>
+                            <li><strong>Facturation</strong> : Devis professionnel avec TVA déductible</li>
+                            <li><strong>Contrat annuel</strong> : Possibilité de contrat mensuel ou annuel</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment se passe la première prise de contact ?</button>
+                    <div class="faq-answer">
+                        <p>Notre processus d'accueil est simple et sécurisé :</p>
+                        <ul>
+                            <li><strong>Contact initial</strong> : Par téléphone, email ou formulaire en ligne</li>
+                            <li><strong>Visite gratuite</strong> : Rencontre à votre domicile/locaux pour évaluer vos
+                                besoins</li>
+                            <li><strong>Devis personnalisé</strong> : Proposition détaillée sans engagement</li>
+                            <li><strong>Signature contrat</strong> : Établissement du contrat et des consignes</li>
+                            <li><strong>Briefing</strong> : Transmission des informations importantes avant votre départ
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section-gray">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Partez l'esprit tranquille</h2>
+                <p>Confiez-nous la gestion de votre domicile ou local professionnel pendant votre absence</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="openChatbot('conciergerie')">
+                        <i class="fas fa-calendar-alt"></i> Planifier un service
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-file-alt"></i> Demander un devis
+                    </a>
+                    <a href="tel:+32478951269" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Appeler maintenant
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8; text-align: center;">
+                    <i class="fas fa-info-circle"></i> Premier audit gratuit | Service disponible 7j/7 |
+                    Personnalisation selon vos besoins
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container (injecté par JS) -->
+    
+    <!-- WhatsApp Flottant -->
+    
+    <div id="footer-container"></div>
+
+    <!-- Chatbot -->
+
+    <!-- WhatsApp Float -->
+
+    <!-- JavaScript -->
+
+        <script src="/public/js/app.js" defer></script>
+
+    <!-- FAQ STYLES + JAVASCRIPT -->
+    <style>
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #2C5AA0;
+            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.1);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1f2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.9rem;
+            color: #2C5AA0;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+        .faq-item.is-open .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.is-open .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .faq-answer p {
+            color: #4b5563;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+    <script>
+    console.log('🔧 FAQ JavaScript chargé');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            console.log('📊 FAQ items:', faqItems.length);
+            if (faqItems.length === 0) return;
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.faq-question');
+                if (!question) return;
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const wasOpen = item.classList.contains('is-open');
+                    faqItems.forEach(otherItem => otherItem.classList.remove('is-open'));
+                    if (!wasOpen) {
+                        item.classList.add('is-open');
+                        console.log('✅ FAQ', index + 1, 'ouverte');
+                    }
+                });
+            });
+            console.log('✅ FAQ OK');
+        }, 300);
+    });
+    </script>
+
+</body>
+
+</html>

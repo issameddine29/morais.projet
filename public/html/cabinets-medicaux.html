@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettoyage de Petites Cliniques & Cabinets Médicaux - Morais Cleaning</title>
+    <meta name="description"
+        content="Service de nettoyage professionnel pour petites cliniques, cabinets médicaux et centres de santé à Bruxelles. Hygiène hospitalière, désinfection certifiée, protocoles sanitaires.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    
+    <link rel="stylesheet" href="/public/css/components/whatsapp.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+    <style>
+        .clinic-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #059669;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        .hygiene-note {
+            background: #f0fdf4;
+            border-left: 4px solid #059669;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .clinic-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .clinic-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .clinic-feature i {
+            color: #34d399;
+            font-size: 1.2rem;
+        }
+
+        .type-clinic {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #059669;
+            transition: transform 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .type-clinic:hover {
+            transform: translateY(-5px);
+        }
+
+        .clinic-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #059669, #34d399);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26, 54, 93, 0.92), rgba(26, 54, 93, 0.88));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-feature i {
+            font-size: 1.2rem;
+            color: #10b981;
+        }
+
+        .description-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .description-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .description-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .hygiene-item {
+            border-left: 4px solid #059669;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .hygiene-item h3 {
+            color: #059669;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-features {
+                gap: 20px;
+            }
+
+            .hero-feature {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .hero-bg-image {
+            filter: brightness(0.5);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .service-hero:hover .hero-bg-image {
+            transform: scale(1.02);
+            filter: brightness(0.55);
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #e6eefb;
+            max-width: 700px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 12px;
+            align-items: start;
+        }
+
+        .client-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+            text-align: left;
+            transition: transform .18s ease, box-shadow .18s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .client-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(2, 6, 23, 0.10);
+        }
+
+        .client-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+            color: #1e3a8a;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .client-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .client-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .client-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #475569;
+            background: rgba(15, 23, 42, 0.03);
+            padding: 4px 8px;
+            border-radius: 999px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .included-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .included-check {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #eef2ff;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .client-thumb img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .client-card {
+            padding: 18px;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 620px) {
+            .client-thumb img {
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+            }
+
+            .client-card {
+                padding: 14px;
+            }
+        }
+    </style>
+    </head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Banner -->
+    <section class="service-hero">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Petite clinique médicale propre et moderne" class="hero-bg-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Nettoyage de Petites Cliniques <span class="clinic-badge"><i
+                            class="fas fa-shield-alt"></i> Hygiène médicale</span></h1>
+
+                <p class="hero-subtitle">
+                    Service spécialisé de nettoyage et désinfection pour petites cliniques, centres médicaux et cabinets
+                    de groupe à Bruxelles. Protocoles hospitaliers adaptés aux structures de taille moyenne.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openChatbot('cliniques')">
+                        <i class="fas fa-clipboard-check"></i> Devis clinique
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Contact rapide
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="clinic-feature">
+                        <i class="fas fa-hospital"></i>
+                        <span>Spécialisé cliniques</span>
+                    </div>
+                    <div class="clinic-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Horaires adaptés</span>
+                    </div>
+                    <div class="clinic-feature">
+                        <i class="fas fa-certificate"></i>
+                        <span>Normes sanitaires</span>
+                    </div>
+                    <div class="clinic-feature">
+                        <i class="fas fa-users"></i>
+                        <span>Équipe formée</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description -->
+    <section class="section-white">
+        <div class="container">
+            <div class="description-content">
+                <div class="description-text">
+                    <h2>Nettoyage médical pour structures moyennes</h2>
+                    <p>Les petites cliniques et cabinets médicaux groupés ont des besoins spécifiques en matière
+                        d'hygiène : plusieurs salles de consultation, espaces communs, zones de stérilisation, et un
+                        flux
+                        de patients plus important. Notre service est spécialement conçu pour ces structures.</p>
+                    <p>Nous adaptons nos protocoles à la taille de votre clinique, en respectant les zones critiques
+                        (bloc opératoire, salle de pansements, laboratoire) tout en optimisant les coûts pour les
+                        structures de taille moyenne.</p>
+                    <div class="hygiene-item">
+                        <h3><i class="fas fa-exclamation-circle"></i> Zones à risque contrôlées</h3>
+                        <p>Nous identifions et traitons particulièrement les zones à haut risque infectieux : salles
+                            d'opération, unités de stérilisation, laboratoires d'analyses.</p>
+                    </div>
+                </div>
+
+                <div class="description-image">
+                    <img src="https://faconmedical.fr/blog/wp-content/uploads/2025/09/les-6-techniques-de-nettoyage-en-milieu-hospitalier-1280x700.jpg"
+                        alt="Centre médical avec plusieurs cabinets" loading="lazy" class="rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types de cliniques -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Pour quelles structures médicales ?</h2>
+            <div class="clients-grid">
+                <!-- Carte 1 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://www.kinemorena.be/wp-content/uploads/2015/11/kine-morena-gosselies-22.jpg"
+                            alt="Clinique de kinésithérapie">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Centres de kinésithérapie</h3>
+                    <div class="client-tag">3-10 salles</div>
+                    <p>Nettoyage des salles de rééducation, piscine de réadaptation, matériel thérapeutique, espaces
+                        communs.</p>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Maison médicale">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-clinic-medical"></i></div>
+                    <h3>Maisons médicales</h3>
+                    <div class="client-tag">Médecins généralistes</div>
+                    <p>Entretien des salles d'attente communes, bureaux administratifs, plusieurs cabinets, sanitaires
+                        partagés.</p>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://odontys.ca/wp-content/uploads/2025/06/odontys-centres-dentaires-clinique.jpg"
+                            alt="Centre dentaire">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-tooth"></i></div>
+                    <h3>Centres dentaires</h3>
+                    <div class="client-tag">Multiples dentistes</div>
+                    <p>Désinfection des unités dentaires multiples, salle de stérilisation centrale, laboratoire de
+                        prothèse.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Protocole de nettoyage -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Notre protocole pour cliniques</h2>
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-check">1</div>
+                    <div class="included-content">
+                        <h3>Audit initial</h3>
+                        <p>Analyse des flux patients, identification des zones critiques, plan de nettoyage personnalisé
+                            pour votre structure.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">2</div>
+                    <div class="included-content">
+                        <h3>Désinfection zones médicales</h3>
+                        <p>Traitement complet des salles de consultation, équipements, surfaces de travail et points de
+                            contact.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">3</div>
+                    <div class="included-content">
+                        <h3>Espaces communs</h3>
+                        <p>Nettoyage approfondi de la salle d'attente, accueil, couloirs, sanitaires patients et
+                            personnels.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">4</div>
+                    <div class="included-content">
+                        <h3>Zones techniques</h3>
+                        <p>Entretien des salles de stérilisation, laboratoires, pharmacies internes, locaux techniques.
+                        </p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">5</div>
+                    <div class="included-content">
+                        <h3>Bureaux administratifs</h3>
+                        <p>Nettoyage des bureaux de secrétariat, archives, salles de réunion, espaces de détente du
+                            personnel.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">6</div>
+                    <div class="included-content">
+                        <h3>Contrôle & Documentation</h3>
+                        <p>Vérification systématique, fiche de suivi, certification de désinfection, rapport
+                            d'intervention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages spécifiques -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir notre service pour cliniques ?</h2>
+            <div class="method-steps">
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-euro-sign"></i></div>
+                    <h3>Tarifs adaptés</h3>
+                    <p>Forfaits économiques pour structures moyennes, pas de surcoût pour les petites cliniques.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Flexibilité horaire</h3>
+                    <p>Interventions en soirée, week-end, ou selon vos horaires d'ouverture au public.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-user-shield"></i></div>
+                    <h3>Personnel formé</h3>
+                    <p>Équipe spécialisée en hygiène hospitalière, connaissant les spécificités des cliniques.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-file-contract"></i></div>
+                    <h3>Contrat sur mesure</h3>
+                    <p>Engagement flexible (quotidien, hebdo, mensuel) adapté à votre activité médicale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes - Cliniques</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Quelle différence avec le nettoyage de grands hôpitaux ?</button>
+                    <div class="faq-answer">
+                        <p>Nous adaptons les protocoles hospitaliers aux structures de taille moyenne. Moins de
+                            bureaucratie, plus de flexibilité, tarifs adaptés, et une relation plus directe avec le
+                            responsable de la clinique.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Pouvez-vous gérer plusieurs sites médicaux ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, nous intervenons sur plusieurs sites d'une même organisation (cliniques satellites,
+                            cabinets secondaires) avec une coordination centralisée et tarifs groupés.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment gérez-vous les déchets médicaux des cliniques ?</button>
+                    <div class="faq-answer">
+                        <p>Nous mettons en place un système de tri DASRI conforme, avec collecte par prestataire agréé,
+                            traçabilité complète, et formation de votre personnel aux bonnes pratiques.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous des audits d'hygiène gratuits ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, nous réalisons un audit initial gratuit de vos locaux, avec recommandations pour
+                            optimiser vos procédures de nettoyage et réduire les risques infectieux.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Quelle formation pour votre personnel médical ?</button>
+                    <div class="faq-answer">
+                        <p>Nos agents suivent une formation spécifique "Hygiène en milieu médico-social", avec recyclage
+                            annuel, et sont sensibilisés aux pathologies infectieuses courantes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Avez-vous des références dans le médical à Bruxelles ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, nous nettoyons plusieurs maisons médicales, centres de kinésithérapie et cliniques
+                            dentaires à Bruxelles. Références disponibles sur demande avec accord des clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section-gray">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Une clinique propre = des patients en confiance</h2>
+                <p>L'hygiène est la première chose que remarquent vos patients. Confiez le nettoyage de votre clinique à
+                    des professionnels formés aux exigences sanitaires médicales.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="openChatbot('cliniques')">
+                        <i class="fas fa-hospital"></i> Devis clinique médicale
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-calendar-check"></i> Audit gratuit
+                    </a>
+                    <a href="tel:+32478951269" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Urgence sanitaire
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-info-circle"></i> Premier audit gratuit - Pas d'engagement
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    
+    <!-- WhatsApp Flottant -->
+    
+    <div id="footer-container"></div>
+
+    <!-- Chatbot Container -->
+
+    <!-- WhatsApp Float -->
+
+    <!-- JavaScript -->
+
+    <script>
+        // Script spécifique pour la page petites cliniques
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animation pour les éléments d'hygiène
+            const hygieneItems = document.querySelectorAll('.hygiene-item');
+            hygieneItems.forEach(item => {
+                item.style.animationDelay = (Math.random() * 0.5) + 's';
+            });
+
+            // Préchargement des images
+            const images = [
+                'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            ];
+
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+
+            // Gestion spécifique clinique
+            const clinicBtns = document.querySelectorAll('[onclick*="cliniques"]');
+            clinicBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    localStorage.setItem('medicalService', 'clinique');
+                    showNotification('Demande pour clinique médicale enregistrée.', 'success');
+                });
+            });
+        });
+
+        function showNotification(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-bell"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+
+            setTimeout(() => toast.classList.add('show'), 100);
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+    </script>
+
+    <style>
+        .toast-notification {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #1a365d;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-notification.success {
+            background: #059669;
+        }
+
+        .toast-notification i {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description-content,
+        .clients-grid,
+        .included-grid,
+        .method-steps,
+        .faq-list,
+        .cta-box {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Style pour les badges médicaux */
+        .client-tag.medical {
+            background: rgba(5, 150, 105, 0.1);
+            color: #059669;
+        }
+
+        .client-tag.high-risk {
+            background: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+        }
+    </style>
+    <script src="/public/js/app.js" defer></script>
+
+    <!-- FAQ STYLES + JAVASCRIPT -->
+    <style>
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #2C5AA0;
+            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.1);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1f2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.9rem;
+            color: #2C5AA0;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+        .faq-item.is-open .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.is-open .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .faq-answer p {
+            color: #4b5563;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+    <script>
+    console.log('🔧 FAQ JavaScript chargé');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            console.log('📊 FAQ items:', faqItems.length);
+            if (faqItems.length === 0) return;
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.faq-question');
+                if (!question) return;
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const wasOpen = item.classList.contains('is-open');
+                    faqItems.forEach(otherItem => otherItem.classList.remove('is-open'));
+                    if (!wasOpen) {
+                        item.classList.add('is-open');
+                        console.log('✅ FAQ', index + 1, 'ouverte');
+                    }
+                });
+            });
+            console.log('✅ FAQ OK');
+        }, 300);
+    });
+    </script>
+
+</body>
+
+</html>

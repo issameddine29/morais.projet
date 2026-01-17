@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettoyage Locaux Commerciaux - Morais Cleaning</title>
+    <meta name="description"
+        content="Service professionnel de nettoyage de locaux commerciaux à Bruxelles. Bureaux, magasins, restaurants, centres commerciaux. Nettoyage régulier et sur mesure.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    
+    <link rel="stylesheet" href="/public/css/components/whatsapp.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+    <style>
+        .commercial-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #1e40af;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        .professional-note {
+            background: #eff6ff;
+            border-left: 4px solid #1e40af;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .commercial-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .commercial-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .commercial-feature i {
+            color: #60a5fa;
+            font-size: 1.2rem;
+        }
+
+        .type-commercial {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #1e40af;
+            transition: transform 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .type-commercial:hover {
+            transform: translateY(-5px);
+        }
+
+        .commercial-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e40af, #60a5fa);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26, 54, 93, 0.92), rgba(26, 54, 93, 0.88));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-feature i {
+            font-size: 1.2rem;
+            color: #60a5fa;
+        }
+
+        .description-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .description-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .description-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .business-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #1e40af;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 15px;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .business-item {
+            border-left: 4px solid #1e40af;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .business-item h3 {
+            color: #1e40af;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-features {
+                gap: 20px;
+            }
+
+            .hero-feature {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .business-badge {
+                display: block;
+                margin: 10px auto;
+                width: fit-content;
+            }
+        }
+
+        /* Visual polish */
+        .hero-bg-image {
+            filter: brightness(0.5);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .service-hero:hover .hero-bg-image {
+            transform: scale(1.02);
+            filter: brightness(0.55);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(10, 25, 57, 0.7), rgba(10, 25, 57, 0.6));
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #e6eefb;
+            max-width: 700px;
+        }
+
+        .hero-actions .btn {
+            border-radius: 8px;
+            padding: 10px 18px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+        }
+
+        .hero-actions .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+
+        /* Clients grid - STRUCTURE IDENTIQUE */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 12px;
+            align-items: start;
+        }
+
+        .client-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+            text-align: left;
+            transition: transform .18s ease, box-shadow .18s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .client-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(2, 6, 23, 0.10);
+        }
+
+        .client-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+            color: #1e3a8a;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .client-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .client-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .client-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #475569;
+            background: rgba(15, 23, 42, 0.03);
+            padding: 4px 8px;
+            border-radius: 999px;
+            margin-top: 6px;
+        }
+
+        .clients-cta {
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        .clients-cta .btn {
+            padding: 10px 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Included steps: number badges */
+        .included-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .included-check {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #eef2ff;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Thumbnails and CTAs */
+        .client-thumb img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .client-card {
+            padding: 18px;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+        }
+
+        .clients-cta .btn-primary {
+            background: linear-gradient(90deg, #1e40af, #1d4ed8);
+            border: none;
+            color: #fff;
+        }
+
+        .clients-cta .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            color: #0f172a;
+        }
+
+        .business-note {
+            font-size: 0.9rem;
+            color: #374151;
+            margin-top: 10px;
+            opacity: 0.95;
+        }
+
+        /* Small screen tweaks */
+        @media (max-width: 620px) {
+            .client-thumb img {
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+            }
+
+            .client-card {
+                padding: 14px;
+            }
+
+            .clients-cta .btn {
+                width: 100%;
+                display: block;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+    </head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Banner -->
+    <section class="service-hero">
+        <!-- IMAGE BANNIÈRE POUR LOCAUX COMMERCIAUX -->
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Bureaux commerciaux modernes et propres" class="hero-bg-image" loading="lazy">
+
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Nettoyage Locaux Commerciaux <span class="business-badge"><i
+                            class="fas fa-briefcase"></i> Professionnel</span></h1>
+
+                <p class="hero-subtitle">
+                    Entretien régulier et professionnel de vos espaces commerciaux à Bruxelles. Bureaux, magasins,
+                    restaurants, centres commerciaux. Un environnement propre pour vos clients et collaborateurs.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openChatbot('locaux-commerciaux')">
+                        <i class="fas fa-building"></i> Devis commercial
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Appeler maintenant
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="commercial-feature">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Contrats réguliers</span>
+                    </div>
+                    <div class="commercial-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Horaires flexibles</span>
+                    </div>
+                    <div class="commercial-feature">
+                        <i class="fas fa-leaf"></i>
+                        <span>Produits écologiques</span>
+                    </div>
+                    <div class="commercial-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Assurances professionnelles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description -->
+    <section class="section-white">
+        <div class="container">
+            <div class="description-content">
+                <div class="description-text">
+                    <h2>Un environnement professionnel impeccable</h2>
+                    <p>L'image de votre entreprise passe par la propreté de vos locaux. Nous offrons des solutions de
+                        nettoyage commercial sur mesure adaptées à vos besoins spécifiques et à vos horaires
+                        d'ouverture.</p>
+                    <p>Notre équipe formée aux techniques de nettoyage commercial intervient en dehors des heures de
+                        travail pour ne pas perturber votre activité. Nous utilisons des équipements professionnels et
+                        des produits efficaces et respectueux de l'environnement.</p>
+                    <div class="business-item">
+                        <h3><i class="fas fa-chart-line"></i> Impact sur votre image</h3>
+                        <p>Des locaux propres augmentent la satisfaction client de 40% et améliorent la productivité de
+                            vos équipes. Investissez dans la propreté, investissez dans votre succès.</p>
+                    </div>
+                </div>
+
+                <div class="description-image">
+                    <!-- PHOTO POUR LA SECTION DESCRIPTION -->
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Nettoyage de bureaux commerciaux modernes" loading="lazy" class="rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types de locaux commerciaux - 6 CARTES -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Nos spécialités commerciales</h2>
+            <div class="clients-grid">
+                <!-- Carte 1 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Bureaux d'entreprise modernes"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-building"></i></div>
+                    <h3>Bureaux d'entreprise</h3>
+                    <div class="client-tag">Sociétés & startups</div>
+                    <p>Nettoyage quotidien ou hebdomadaire des bureaux, salles de réunion, espaces communs et sanitaires
+                        professionnels.</p>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Magasin de vente au détail"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-store"></i></div>
+                    <h3>Commerces de détail</h3>
+                    <div class="client-tag">Boutiques & magasins</div>
+                    <p>Nettoyage des vitrines, sols, cabines d'essayage et espaces vente. Interventions en dehors des
+                        heures d'ouverture.</p>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Restaurant et cuisine professionnelle"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-utensils"></i></div>
+                    <h3>Restaurants & Horeca</h3>
+                    <div class="client-tag">Sécurité alimentaire</div>
+                    <p>Nettoyage professionnel des cuisines, salles, sanitaires. Dégraissage, désinfection conforme aux
+                        normes AFSCA.</p>
+                </div>
+
+                <!-- Carte 4 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://cloudfront-eu-central-1.images.arcpublishing.com/leparisien/SGXXHO3UDRHYFJW4STXSXONPWY.jpg"
+                            alt="Centre commercial et galerie marchande"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>Centres commerciaux</h3>
+                    <div class="client-tag">Grandes surfaces</div>
+                    <p>Entretien des allées, sanitaires publics, escalators, aires de repos. Planning d'intervention
+                        sur-mesure.</p>
+                </div>
+
+                <!-- Carte 5 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://imagelibrary.davidlloyd.co.uk/transform/50458040-3bc4-4218-8c4c-399455333deb/_NZ90260-HDR?format=webp"
+                            alt="Salle de sport et fitness"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Salles de sport & fitness</h3>
+                    <div class="client-tag">Établissements sportifs</div>
+                    <p>Désinfection des machines, sols, vestiaires et douches. Lutte contre les bactéries et champignons
+                        en milieu humide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inclus dans le service -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Notre offre complète pour entreprises</h2>
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-check">1</div>
+                    <div class="included-content">
+                        <h3>Audit initial gratuit</h3>
+                        <p>Visite de vos locaux, analyse des besoins, élaboration d'un plan de nettoyage personnalisé
+                            selon votre activité.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">2</div>
+                    <div class="included-content">
+                        <h3>Contrat sur mesure</h3>
+                        <p>Fréquence adaptée (quotidienne, hebdomadaire, ponctuelle). Horaires flexibles selon vos
+                            contraintes d'ouverture.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">3</div>
+                    <div class="included-content">
+                        <h3>Nettoyage des sols</h3>
+                        <p>Aspiration, lavage, lustrage selon le revêtement (moquette, parquet, carrelage, béton).
+                            Traitements spécifiques.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">4</div>
+                    <div class="included-content">
+                        <h3>Sanitaires professionnels</h3>
+                        <p>Nettoyage approfondi des WC, urinoirs, lavabos. Réapprovisionnement des consommables
+                            (savon, papier).</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">5</div>
+                    <div class="included-content">
+                        <h3>Espaces communs</h3>
+                        <p>Entretien des cuisines d'entreprise, salles de pause, couloirs, ascenseurs, halls
+                            d'accueil et réception.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">6</div>
+                    <div class="included-content">
+                        <h3>Suivi et reporting</h3>
+                        <p>Point régulier avec le responsable, check-lists de contrôle, rapports d'intervention,
+                            réactivité aux demandes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipement spécialisé -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Solutions techniques professionnelles</h2>
+            <div class="method-steps">
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-water"></i></div>
+                    <h3>Monobrosses et autolaveuses</h3>
+                    <p>Machines professionnelles pour grands espaces. Lavage, rinçage, séchage en une seule passe.
+                        Économie d'eau.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-spray-can"></i></div>
+                    <h3>Équipement HVE</h3>
+                    <p>Nettoyage vapeur haute température pour surfaces délicates. Élimination des bactéries sans
+                        produits chimiques.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-wind"></i></div>
+                    <h3>Aspirateurs commerciaux</h3>
+                    <p>Puissants et silencieux. Filtration HEPA pour allergènes. Adaptés aux moquettes et surfaces
+                        dures.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-prescription-bottle"></i></div>
+                    <h3>Produits écologiques</h3>
+                    <p>Gamme complète de produits certifiés Ecolabel. Efficaces, sûrs pour les utilisateurs et
+                        l'environnement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Questions commerciales fréquentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Quels sont vos horaires d'intervention ?</button>
+                    <div class="faq-answer">
+                        <p>Nous intervenons principalement en dehors des heures d'ouverture (soirée, nuit, week-end)
+                            pour
+                            ne pas perturber votre activité. Pour les établissements ouverts 24h/24, nous établissons un
+                            planning spécifique.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous des contrats à l'année ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, nous proposons des contrats d'entretien annuels avec des tarifs préférentiels. Ces
+                            contrats incluent un nombre défini de passages par semaine/mois, avec possibilité de
+                            prestations supplémentaires ponctuelles.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Vos employés sont-ils assurés ?</button>
+                    <div class="faq-answer">
+                        <p>Absolument. Tous nos employés sont couverts par une assurance responsabilité civile
+                            professionnelle, une assurance accidents du travail et une garantie dommages aux biens. Nous
+                            fournissons les attestations d'assurance sur demande.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment gérez-vous les clés d'accès ?</button>
+                    <div class="faq-answer">
+                        <p>Plusieurs options : système de clés sécurisées avec double vérification, accès via
+                            gardiennage,
+                            ou présence d'un responsable sur place. Nous signons des conventions de confidentialité
+                            concernant l'accès à vos locaux.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous des forêts "tout compris" ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, notre forêt "Business Premium" inclut : nettoyage quotidien, fourniture des consommables
+                            (savon, papier, sacs poubelles), petites réparations d'entretien, et deux grands nettoyages
+                            annuels (vitres, moquettes).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Quelle est votre zone d'intervention ?</button>
+                    <div class="faq-answer">
+                        <p>Nous couvrons toute la région de Bruxelles-Capitale et les communes périphériques. Pour les
+                            grandes surfaces en dehors de Bruxelles, nous étudions chaque demande au cas par cas avec
+                            des frais de déplacement adaptés.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section-gray">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Un environnement professionnel impeccable</h2>
+                <p>Confiez l'entretien de vos locaux commerciaux à des professionnels. Des espaces propres améliorent
+                    l'image de votre entreprise, la satisfaction client et le bien-être de vos équipes.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="openChatbot('locaux-commerciaux')">
+                        <i class="fas fa-file-contract"></i> Demander un devis
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Audit gratuit
+                    </a>
+                    <a href="tel:+32478951269" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Service commercial
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-info-circle"></i> Réduction pour contrats annuels - Facturation mensuelle
+                    simplifiée
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    
+    <!-- WhatsApp Flottant -->
+    
+    <div id="footer-container"></div>
+
+    <!-- Chatbot Container -->
+
+    <!-- WhatsApp Float -->
+
+    <!-- JavaScript -->
+
+    <script>
+        // Script spécifique pour la page locaux commerciaux
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animation pour les éléments business
+            const businessItems = document.querySelectorAll('.business-item');
+            businessItems.forEach(item => {
+                item.style.animationDelay = (Math.random() * 0.5) + 's';
+            });
+
+            // Gestion du bouton devis commercial
+            const commercialBtn = document.querySelector('.btn-primary');
+            if (commercialBtn) {
+                commercialBtn.addEventListener('click', function () {
+                    localStorage.setItem('commercialService', 'locaux-commerciaux');
+                    showNotification('Demande de devis commercial enregistrée. Notre service commercial vous contactera dans les 24h.', 'success');
+                });
+            }
+
+            // Préchargement des images
+            const images = [
+                'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            ];
+
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+
+        function showNotification(message, type) {
+            // Créer une notification toast
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-briefcase"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+
+            // Afficher
+            setTimeout(() => toast.classList.add('show'), 100);
+
+            // Supprimer après 5 secondes
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+    </script>
+
+    <style>
+        .toast-notification {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #1e40af;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-notification.success {
+            background: #10b981;
+        }
+
+        .toast-notification i {
+            font-size: 1.2rem;
+        }
+
+        /* Animation pour les éléments */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description-content,
+        .clients-grid,
+        .included-grid,
+        .method-steps,
+        .faq-list,
+        .cta-box {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+    <script src="/public/js/app.js" defer></script>
+
+    <!-- FAQ STYLES + JAVASCRIPT -->
+    <style>
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #2C5AA0;
+            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.1);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1f2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.9rem;
+            color: #2C5AA0;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+        .faq-item.is-open .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.is-open .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .faq-answer p {
+            color: #4b5563;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+    <script>
+    console.log('🔧 FAQ JavaScript chargé');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            console.log('📊 FAQ items:', faqItems.length);
+            if (faqItems.length === 0) return;
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.faq-question');
+                if (!question) return;
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const wasOpen = item.classList.contains('is-open');
+                    faqItems.forEach(otherItem => otherItem.classList.remove('is-open'));
+                    if (!wasOpen) {
+                        item.classList.add('is-open');
+                        console.log('✅ FAQ', index + 1, 'ouverte');
+                    }
+                });
+            });
+            console.log('✅ FAQ OK');
+        }, 300);
+    });
+    </script>
+
+</body>
+
+</html>

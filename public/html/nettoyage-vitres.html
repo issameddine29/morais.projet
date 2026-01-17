@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettoyage de Vitres - Morais Cleaning</title>
+    <meta name="description"
+        content="Service professionnel de nettoyage de vitres à Bruxelles. Vitres intérieures et extérieures, baies vitrées, façades, immeubles. Équipement de sécurité professionnel.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    
+    <link rel="stylesheet" href="/public/css/components/whatsapp.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+    <style>
+        .window-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #0ea5e9;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        .safety-note {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .window-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .window-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .window-feature i {
+            color: #7dd3fc;
+            font-size: 1.2rem;
+        }
+
+        .type-window {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #0ea5e9;
+            transition: transform 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .type-window:hover {
+            transform: translateY(-5px);
+        }
+
+        .window-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0ea5e9, #7dd3fc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26, 54, 93, 0.92), rgba(26, 54, 93, 0.88));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-feature i {
+            font-size: 1.2rem;
+            color: #7dd3fc;
+        }
+
+        .description-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .description-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .description-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .expert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #0ea5e9;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 15px;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .safety-item {
+            border-left: 4px solid #0ea5e9;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .safety-item h3 {
+            color: #0ea5e9;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-features {
+                gap: 20px;
+            }
+
+            .hero-feature {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .expert-badge {
+                display: block;
+                margin: 10px auto;
+                width: fit-content;
+            }
+        }
+
+        /* Visual polish */
+        .hero-bg-image {
+            filter: brightness(0.5);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .service-hero:hover .hero-bg-image {
+            transform: scale(1.02);
+            filter: brightness(0.55);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(10, 25, 57, 0.7), rgba(10, 25, 57, 0.6));
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #e6eefb;
+            max-width: 700px;
+        }
+
+        .hero-actions .btn {
+            border-radius: 8px;
+            padding: 10px 18px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+        }
+
+        .hero-actions .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+
+        /* Clients grid - STRUCTURE IDENTIQUE */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 12px;
+            align-items: start;
+        }
+
+        .client-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+            text-align: left;
+            transition: transform .18s ease, box-shadow .18s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .client-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(2, 6, 23, 0.10);
+        }
+
+        .client-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+            color: #1e3a8a;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .client-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .client-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .client-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #475569;
+            background: rgba(15, 23, 42, 0.03);
+            padding: 4px 8px;
+            border-radius: 999px;
+            margin-top: 6px;
+        }
+
+        .clients-cta {
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        .clients-cta .btn {
+            padding: 10px 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Included steps: number badges */
+        .included-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .included-check {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #eef2ff;
+            color: #0ea5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Thumbnails and CTAs */
+        .client-thumb img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .client-card {
+            padding: 18px;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+        }
+
+        .clients-cta .btn-primary {
+            background: linear-gradient(90deg, #0ea5e9, #0284c7);
+            border: none;
+            color: #fff;
+        }
+
+        .clients-cta .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            color: #0f172a;
+        }
+
+        .safety-note {
+            font-size: 0.9rem;
+            color: #374151;
+            margin-top: 10px;
+            opacity: 0.95;
+        }
+
+        /* Small screen tweaks */
+        @media (max-width: 620px) {
+            .client-thumb img {
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+            }
+
+            .client-card {
+                padding: 14px;
+            }
+
+            .clients-cta .btn {
+                width: 100%;
+                display: block;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+    </head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Banner -->
+    <section class="service-hero">
+        <!-- IMAGE BANNIÈRE POUR NETTOYAGE DE VITRES -->
+        <img src="https://www.glass-vitre.be/wp-content/uploads/2023/05/Nettoyage-vitre.jpg"
+            alt="Nettoyage professionnel de vitres d'immeuble" class="hero-bg-image" loading="lazy">
+
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Nettoyage de Vitres <span class="expert-badge"><i
+                            class="fas fa-window-maximize"></i> Expert hauteur</span></h1>
+
+                <p class="hero-subtitle">
+                    Professionnels du nettoyage de vitres à Bruxelles. Intérieur, extérieur, baies vitrées, façades,
+                    immeubles. Équipement de sécurité professionnel pour toutes les hauteurs. Résultats impeccables sans
+                    traces.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openChatbot('vitres')">
+                        <i class="fas fa-spray-can"></i> Devis vitres
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Appeler maintenant
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="window-feature">
+                        <i class="fas fa-hard-hat"></i>
+                        <span>Équipement sécurité</span>
+                    </div>
+                    <div class="window-feature">
+                        <i class="fas fa-water"></i>
+                        <span>Sans traces</span>
+                    </div>
+                    <div class="window-feature">
+                        <i class="fas fa-building"></i>
+                        <span>Toutes hauteurs</span>
+                    </div>
+                    <div class="window-feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Résultats immédiats</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description -->
+    <section class="section-white">
+        <div class="container">
+            <div class="description-content">
+                <div class="description-text">
+                    <h2>Des vitres cristallines en toute sécurité</h2>
+                    <p>Le nettoyage de vitres n'est pas seulement une question d'esthétique. Des vitres propres
+                        augmentent la luminosité naturelle, améliorent l'isolation thermique et prolongent la durée de
+                        vie des fenêtres.</p>
+                    <p>Notre équipe spécialisée en nettoyage de vitres intervient avec un équipement professionnel
+                        adapté à chaque situation : perches télescopiques, nacelles, harnais de sécurité pour les
+                        travaux en hauteur. Nous utilisons des techniques et produits qui garantissent un résultat sans
+                        traces.</p>
+                    <div class="safety-item">
+                        <h3><i class="fas fa-shield-alt"></i> Sécurité avant tout</h3>
+                        <p>Nos techniciens sont formés aux travaux en hauteur, équipés de harnais de sécurité
+                            certifiés, et suivent strictement les protocoles de sécurité. Assurance responsabilité
+                            civile spécifique aux travaux en hauteur.</p>
+                    </div>
+                </div>
+
+                <div class="description-image">
+                    <!-- PHOTO POUR LA SECTION DESCRIPTION -->
+                    <img src="https://www.rajapack.be/blog-be/wp-content/uploads/2024/09/Ramen-wassen-1.jpg"
+                        alt="Technicien nettoyant des vitres avec perche télescopique" loading="lazy" class="rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types de vitres - 6 CARTES -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Nos spécialités vitres</h2>
+            <div class="clients-grid">
+                <!-- Carte 1 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://www.nettoyage-evrard.be/wp-content/uploads/2023/09/nettoyage-vitre-maison-1024x683.jpg"
+                            alt="Maisons et appartements"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-home"></i></div>
+                    <h3>Particuliers</h3>
+                    <div class="client-tag">Maisons & appartements</div>
+                    <p>Nettoyage complet des vitres intérieures et extérieures. Fenêtres, portes-fenêtres,
+                        vérandas, baies vitrées. Forfaits saisonniers disponibles.</p>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="data:image/jpeg;base64,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"
+                            alt="Immeubles de bureaux"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-building"></i></div>
+                    <h3>Bureaux & entreprises</h3>
+                    <div class="client-tag">Façades vitrées</div>
+                    <p>Nettoyage des façades vitrées, vitrines commerciales, murs-rideaux. Interventions nocturnes
+                        pour ne pas perturber l'activité.</p>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://www.snga.fr/public/img/big/1B7550FD0ABE4CE6AECA94D0B63000CAjpeg_5d5e9aefbe3bc.jpeg"
+                            alt="Vitrines de magasins"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-store"></i></div>
+                    <h3>Commerces & boutiques</h3>
+                    <div class="client-tag">Vitrines & entrées</div>
+                    <p>Nettoyage impeccable des vitrines pour attirer les clients. Élimination des traces de doigts,
+                        autocollants, résidus de pluie. Fréquence adaptée à votre secteur.</p>
+                </div>
+
+                <!-- Carte 4 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://www.mdncleaning.be/img/conseils/main/nettoyage_vitrine_masagin_1.webp"
+                            alt="Centres commerciaux"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>Centres commerciaux</h3>
+                    <div class="client-tag">Grandes surfaces vitrées</div>
+                    <p>Entretien régulier des immenses surfaces vitrées, dômes, toitures vitrées, puits de lumière.
+                        Équipement spécifique pour les très grandes hauteurs.</p>
+                </div>
+
+                <!-- Carte 5 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://vitres.net/wp-content/uploads/2024/03/bigstock-117780746.jpg"
+                            alt="Immeubles résidentiels"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-city"></i></div>
+                    <h3>Immeubles résidentiels</h3>
+                    <div class="client-tag">Copropriétés</div>
+                    <p>Nettoyage des façades d'immeubles, halls vitrés, ascenseurs panoramiques. Forfaits annuels
+                        pour les syndics de copropriété.</p>
+                </div>
+
+                <!-- Carte 6 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://lh3.googleusercontent.com/proxy/NNXCH3-GvwsNqczabY_snEA8XgWYfpu2Ql55MZAG9qyWtfSni9FDpMRQbbT7-JyDty8wfWs-hRXO-clnfruwVGZ8GXbF4RRtJQhVSFr5H76h7LAVb2u_g1LdI2Y"
+                            alt="Vitres difficiles d'accès"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h3>Vitres difficiles d'accès</h3>
+                    <div class="client-tag">Spécialiste hauteur</div>
+                    <p>Toitures vitrées, lanterneaux, vasistas, fenêtres de toit, verrières. Équipement de sécurité
+                        adapté pour chaque situation complexe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inclus dans le service -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Notre méthodologie professionnelle</h2>
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-check">1</div>
+                    <div class="included-content">
+                        <h3>Diagnostic & devis</h3>
+                        <p>Évaluation des surfaces à traiter, type de vitrage, accessibilité. Devis détaillé avec
+                            mention des équipements spécifiques nécessaires (nacelle, perches, etc.).</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">2</div>
+                    <div class="included-content">
+                        <h3>Préparation & protection</h3>
+                        <p>Protection des sols et surfaces adjacentes. Installation des équipements de sécurité.
+                            Préparation des solutions de nettoyage spécifiques selon le type de vitrage.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">3</div>
+                    <div class="included-content">
+                        <h3>Nettoyage intérieur</h3>
+                        <p>Application de la solution de nettoyage sur toutes les surfaces intérieures. Élimination
+                            des traces, poussières, empreintes digitales. Nettoyage des cadres et rebords.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">4</div>
+                    <div class="included-content">
+                        <h3>Nettoyage extérieur</h3>
+                        <p>Utilisation de perches télescopiques ou équipements de hauteur selon les besoins.
+                            Élimination des salissures extérieures : pluie, pollution, fientes d'oiseaux.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">5</div>
+                    <div class="included-content">
+                        <h3>Séchage & finition</h3>
+                        <p>Essuyage avec des raclettes professionnelles et chiffons microfibres. Vérification de
+                            l'absence de traces, stries ou résidus. Séchage parfait pour un résultat cristallin.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">6</div>
+                    <div class="included-content">
+                        <h3>Contrôle final & nettoyage</h3>
+                        <p>Inspection sous différents angles de lumière. Retrait des protections, nettoyage des
+                            zones de travail. Validation avec le client avant départ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipement spécialisé -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Équipement haute technologie</h2>
+            <div class="method-steps">
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-ruler-combined"></i></div>
+                    <h3>Perches télescopiques</h3>
+                    <p>Perches professionnelles jusqu'à 18 mètres. Système de verrouillage sécurisé, légèreté et
+                        maniabilité. Permet d'atteindre les vitres hautes sans échelle.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Équipement de sécurité</h3>
+                    <p>Harnais de sécurité certifiés, cordes, nacelles élévatrices, échelles spéciales. Formation
+                        continue aux techniques de travail en hauteur.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-tint"></i></div>
+                    <h3>Système purification eau</h3>
+                    <p>Unité de purification d'eau par osmose inverse. Eau pure à 99,9% qui ne laisse aucune trace
+                        ni dépôt minéral sur les vitres.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-spray-can"></i></div>
+                    <h3>Produits professionnels</h3>
+                    <p>Solutions de nettoyage spécifiques pour chaque type de vitrage : simple vitrage, double
+                        vitrage, vitrages traités (anti-reflet, autonettoyants).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Questions vitres fréquentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Quelle est la meilleure période pour faire nettoyer ses vitres
+                        ?</button>
+                    <div class="faq-answer">
+                        <p>Le printemps et l'automne sont idéaux car les températures modérées permettent un séchage
+                            optimal. Cependant, nous intervenons toute l'année, même en hiver avec nos solutions
+                            antigel. Évitez simplement les journées de pluie ou de vent fort.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment nettoyez-vous les vitres aux étages élevés sans échafaudage
+                        ?</button>
+                    <div class="faq-answer">
+                        <p>Nous utilisons principalement des perches télescopiques professionnelles (jusqu'à 18m) et
+                            des nacelles élévatrices selon les besoins. Pour les très hautes constructions, nous
+                            disposons d'équipements de cordiste (techniques d'accès par cordes) avec tout le matériel
+                            de sécurité nécessaire.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Est-ce que vous nettoyez aussi les cadres et les moustiquaires
+                        ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, notre service complet inclut : le nettoyage des vitres (intérieur et extérieur), le
+                            nettoyage des cadres (alu, bois, PVC), des moustiquaires, des stores et rideaux si
+                            présents, et des rebords de fenêtres. Nous vous proposons des forfaits "tout compris" ou
+                            à la carte selon vos besoins.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Quelle est la durée de validité d'un devis pour nettoyage de vitres
+                        ?</button>
+                    <div class="faq-answer">
+                        <p>Nos devis sont valables 30 jours. Passé ce délai, une nouvelle visite peut être nécessaire
+                            pour vérifier qu'aucun changement n'est intervenu (nouvelles fenêtres, accès modifié,
+                            etc.). Pour les contrats annuels avec planning fixe, le prix est garanti 12 mois.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous des forfaits pour copropriétés ?</button>
+                    <div class="faq-answer">
+                        <p>Absolument. Nous proposons des forfaits annuels pour les syndics de copropriété comprenant
+                            généralement 2 à 4 passages par an selon les besoins. Ces forfaits incluent souvent le
+                            nettoyage des parties communes vitrées, halls d'entrée, et parfois les façades. Tarifs
+                            dégressifs selon le nombre d'étages et de fenêtres.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Que se passe-t-il s'il pleut le jour prévu pour l'intervention
+                        ?</button>
+                    <div class="faq-answer">
+                        <p>Nous surveillons la météo 48h à l'avance. En cas de pluie prévue, nous vous contactons
+                            pour reporter l'intervention à une date favorable, sans frais. Une fois sur place, si la
+                            pluie commence, nous interrompons les travaux et convenons d'un nouveau rendez-vous.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section-gray">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Redécouvrez la luminosité de vos espaces</h2>
+                <p>Des vitres propres transforment immédiatement l'atmosphère d'un lieu. Plus de luminosité, une vue
+                    dégagée, et une impression d'espace augmentée. Faites confiance à des professionnels équipés et
+                    formés.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="openChatbot('vitres')">
+                        <i class="fas fa-window-restore"></i> Devis gratuit
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Planifier une visite
+                    </a>
+                    <a href="tel:+32478951269" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Urgence vitres
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-info-circle"></i> Réduction pour contrats annuels - Premier essai satisfait ou
+                    remboursé
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    
+    <!-- WhatsApp Flottant -->
+    
+    <div id="footer-container"></div>
+
+    <!-- Chatbot Container -->
+
+    <!-- WhatsApp Float -->
+
+    <!-- JavaScript -->
+
+    <script>
+        // Script spécifique pour la page nettoyage de vitres
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animation pour les éléments sécurité
+            const safetyItems = document.querySelectorAll('.safety-item');
+            safetyItems.forEach(item => {
+                item.style.animationDelay = (Math.random() * 0.5) + 's';
+            });
+
+            // Gestion du bouton devis vitres
+            const windowBtn = document.querySelector('.btn-primary');
+            if (windowBtn) {
+                windowBtn.addEventListener('click', function () {
+                    localStorage.setItem('windowService', 'vitres');
+                    showNotification('Demande de devis vitres enregistrée. Nous vous contacterons sous 24h pour convenir d\'une visite.', 'success');
+                });
+            }
+
+            // Préchargement des images
+            const images = [
+                'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1580494736643-74b89d7b7d7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            ];
+
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+
+        function showNotification(message, type) {
+            // Créer une notification toast
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-window-maximize"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+
+            // Afficher
+            setTimeout(() => toast.classList.add('show'), 100);
+
+            // Supprimer après 5 secondes
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+    </script>
+
+    <style>
+        .toast-notification {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #0ea5e9;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-notification.success {
+            background: #10b981;
+        }
+
+        .toast-notification i {
+            font-size: 1.2rem;
+        }
+
+        /* Animation pour les éléments */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description-content,
+        .clients-grid,
+        .included-grid,
+        .method-steps,
+        .faq-list,
+        .cta-box {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+    <script src="/public/js/app.js" defer></script>
+
+    <!-- FAQ STYLES + JAVASCRIPT -->
+    <style>
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #2C5AA0;
+            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.1);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1f2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.9rem;
+            color: #2C5AA0;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+        .faq-item.is-open .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.is-open .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .faq-answer p {
+            color: #4b5563;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+    <script>
+    console.log('🔧 FAQ JavaScript chargé');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            console.log('📊 FAQ items:', faqItems.length);
+            if (faqItems.length === 0) return;
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.faq-question');
+                if (!question) return;
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const wasOpen = item.classList.contains('is-open');
+                    faqItems.forEach(otherItem => otherItem.classList.remove('is-open'));
+                    if (!wasOpen) {
+                        item.classList.add('is-open');
+                        console.log('✅ FAQ', index + 1, 'ouverte');
+                    }
+                });
+            });
+            console.log('✅ FAQ OK');
+        }, 300);
+    });
+    </script>
+
+</body>
+
+</html>

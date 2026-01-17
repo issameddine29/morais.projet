@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettoyage Industriel - Morais Cleaning</title>
+    <meta name="description"
+        content="Service professionnel de nettoyage industriel à Bruxelles. Nettoyage d'usines, entrepôts, ateliers, machines. Dégraissage, dépoussiérage, désinfection. Équipements professionnels, équipe qualifiée.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    
+    <link rel="stylesheet" href="/public/css/components/whatsapp.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+    <style>
+        .industriel-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #ca8a04;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        .safety-note {
+            background: #fefce8;
+            border-left: 4px solid #ca8a04;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .industriel-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .industriel-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .industriel-feature i {
+            color: #facc15;
+            font-size: 1.2rem;
+        }
+
+        .type-industriel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #ca8a04;
+            transition: transform 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .type-industriel:hover {
+            transform: translateY(-5px);
+        }
+
+        .industriel-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ca8a04, #facc15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26, 54, 93, 0.92), rgba(26, 54, 93, 0.88));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-feature i {
+            font-size: 1.2rem;
+            color: #fbbf24;
+        }
+
+        .description-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .description-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .description-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .safety-item {
+            border-left: 4px solid #ca8a04;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .safety-item h3 {
+            color: #ca8a04;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-features {
+                gap: 20px;
+            }
+
+            .hero-feature {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .hero-bg-image {
+            filter: brightness(0.5);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .service-hero:hover .hero-bg-image {
+            transform: scale(1.02);
+            filter: brightness(0.55);
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #e6eefb;
+            max-width: 700px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 12px;
+            align-items: start;
+        }
+
+        .client-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+            text-align: left;
+            transition: transform .18s ease, box-shadow .18s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .client-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(2, 6, 23, 0.10);
+        }
+
+        .client-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+            color: #1e3a8a;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .client-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .client-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .client-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #475569;
+            background: rgba(15, 23, 42, 0.03);
+            padding: 4px 8px;
+            border-radius: 999px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .included-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .included-check {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #eef2ff;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .client-thumb img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .client-card {
+            padding: 18px;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 620px) {
+            .client-thumb img {
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+            }
+
+            .client-card {
+                padding: 14px;
+            }
+        }
+
+        .factory-badge {
+            background: rgba(202, 138, 4, 0.1);
+            color: #ca8a04;
+        }
+
+        .warehouse-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        .food-badge {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+
+        /* Section équipements industriels */
+        .equipment-section {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .equipment-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            border-color: #ca8a04;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .equipment-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #ca8a04;
+            font-size: 1.8rem;
+        }
+
+        /* Section avantages sécurité */
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .safety-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .safety-icon {
+            width: 50px;
+            height: 50px;
+            background: #fef3c7;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ca8a04;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        /* Tableau fréquences industrielles */
+        .frequency-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            margin: 30px 0;
+        }
+
+        .frequency-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .frequency-option {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .frequency-option:hover {
+            border-color: #ca8a04;
+            background: #fefce8;
+        }
+
+        .frequency-title {
+            color: #ca8a04;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Section certifications */
+        .certifications {
+            background: linear-gradient(135deg, #fefce8, #fef3c7);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .cert-icon {
+            color: #ca8a04;
+            font-size: 1.5rem;
+        }
+    </style>
+    </head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Banner -->
+    <section class="service-hero">
+        <img src="https://cdn.prod.website-files.com/6630f7bd126d218b2ab424fe/6630f7be126d218b2ab42689_INDUSTRY-nettoyage-industriel%202.webp"
+            alt="Nettoyage industriel d'une usine avec équipement professionnel" class="hero-bg-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Nettoyage Industriel <span class="industriel-badge"><i
+                            class="fas fa-industry"></i> Usines & Ateliers</span></h1>
+
+                <p class="hero-subtitle">
+                    Service spécialisé de nettoyage industriel pour usines, entrepôts et ateliers à Bruxelles.
+                    Dégraissage mécanique, dépoussiérage, nettoyage de machines, respect des normes HACCP et sécurité.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openChatbot('industriel')">
+                        <i class="fas fa-calculator"></i> Devis industriel
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Expert industriel
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="industriel-feature">
+                        <i class="fas fa-hard-hat"></i>
+                        <span>Équipement lourd</span>
+                    </div>
+                    <div class="industriel-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Normes sécurité</span>
+                    </div>
+                    <div class="industriel-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Intervention 24h/24</span>
+                    </div>
+                    <div class="industriel-feature">
+                        <i class="fas fa-users"></i>
+                        <span>Équipe qualifiée</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description -->
+    <section class="section-white">
+        <div class="container">
+            <div class="description-content">
+                <div class="description-text">
+                    <h2>Nettoyage industriel professionnel</h2>
+                    <p>Dans un environnement industriel, la propreté est essentielle pour la sécurité, la productivité
+                        et la conformité réglementaire. Notre service spécialisé utilise des équipements industriels
+                        adaptés aux volumes et contraintes spécifiques du secteur.</p>
+                    <p>Nous intervenons pendant les arrêts de production (nuit, week-end, arrêts techniques) pour
+                        minimiser l'impact sur votre activité. Notre équipe est formée aux procédures de sécurité
+                        industrielle et aux normes spécifiques (HACCP, ATEX, etc.).</p>
+                    <div class="safety-item">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Sécurité industrielle</h3>
+                        <p>Nos équipes sont certifiées pour travailler en environnement industriel : EPI adaptés,
+                            procédures de cadenassage, formation risques spécifiques.</p>
+                    </div>
+                </div>
+
+                <div class="description-image">
+                    <img src="https://static6.depositphotos.com/1057968/615/i/450/depositphotos_6153518-stock-photo-cleaning.jpg"
+                        alt="Nettoyage haute pression dans une usine" loading="lazy" class="rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secteurs industriels -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Nos spécialités industrielles</h2>
+            <div class="clients-grid">
+                <!-- Carte 1 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://www.nova-clean.fr/images/nettoyage-industriel-locaux-2.jpg"
+                            alt="Usine de production">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-cogs"></i></div>
+                    <h3>Industrie manufacturière</h3>
+                    <div class="client-tag factory-badge">Production</div>
+                    <p>Nettoyage d'usines, chaînes de production, machines-outils, ateliers d'assemblage, zones
+                        techniques.</p>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://blog.lavor.com/hubfs/copertina-Jan-24-2023-09-40-02-6126-AM.jpg"
+                            alt="Entrepôt logistique">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-warehouse"></i></div>
+                    <h3>Entrepôts & Logistique</h3>
+                    <div class="client-tag warehouse-badge">Stockage</div>
+                    <p>Nettoyage d'entrepôts, centres de distribution, quais de chargement, rayonnages, sols
+                        industriels.
+                    </p>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://epacco.be/wp-content/uploads/2023/10/epacco_Reinigingindevoedingsindustrie.jpg"
+                            alt="Agroalimentaire">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-utensils"></i></div>
+                    <h3>Agroalimentaire</h3>
+                    <div class="client-tag food-badge">HACCP</div>
+                    <p>Nettoyage conforme HACCP, désinfection, salles blanches, chaînes de production alimentaire,
+                        laboratoires.</p>
+                </div>
+
+                <!-- Carte 4 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://s1.kaercher-media.com/media/image/selection/58362/m2/reinigung-in-der-werkstatt.webp"
+                            alt="Atelier mécanique">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-tools"></i></div>
+                    <h3>Ateliers mécaniques</h3>
+                    <div class="client-tag factory-badge">Mécanique</div>
+                    <p>Dégraissage machines, nettoyage d'ateliers, traitement des huiles et fluides, dépoussiérage
+                        complet.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipements industriels -->
+    <section class="section-white">
+        <div class="container">
+            <div class="equipment-section">
+                <h2 class="section-title" style="color: #1a365d;">Notre parc machines industriel</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-card">
+                        <div class="equipment-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3>Autolaveuses</h3>
+                        <p>Machines ride-on et walk-behind pour surfaces jusqu'à 10.000m². Lavage, aspiration, séchage
+                            en
+                            une passe.</p>
+                        <small style="color: #64748b;">Débit : 3.000-8.000 m²/h</small>
+                    </div>
+                    <div class="equipment-card">
+                        <div class="equipment-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>Aspirateurs industriels</h3>
+                        <p>Aspirateurs eau/poussière 100L, mobiles ou centralisés, filtration HEPA, pour poussières
+                            fines et déchets.</p>
+                        <small style="color: #64748b;">Volume : 100-500L</small>
+                    </div>
+                    <div class="equipment-card">
+                        <div class="equipment-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Nettoyeurs HP</h3>
+                        <p>Nettoyeurs haute pression 200-500 bar, eau chaude/froide, détergent injection, pour
+                            dégraissage intensif.</p>
+                        <small style="color: #64748b;">Pression : 200-500 bar</small>
+                    </div>
+                    <div class="equipment-card">
+                        <div class="equipment-icon">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <h3>Balayeuses</h3>
+                        <p>Balayeuses mécaniques ride-on pour voiries et grands espaces. Ramassage poussières et
+                            déchets volumineux.</p>
+                        <small style="color: #64748b;">Largeur : 1-2m</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages sécurité -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Sécurité & Conformité</h2>
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #ca8a04; margin-bottom: 10px;">Formation sécurité</h3>
+                        <p style="color: #475569;">Tous nos agents sont formés aux procédures de sécurité industrielle,
+                            cadenassage, travail en hauteur, et risques spécifiques.</p>
+                    </div>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #ca8a04; margin-bottom: 10px;">Assurances adaptées</h3>
+                        <p style="color: #475569;">Assurance responsabilité civile professionnelle de 5.000.000€,
+                            couvrant les dommages aux installations industrielles.</p>
+                    </div>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #ca8a04; margin-bottom: 10px;">Documentation complète</h3>
+                        <p style="color: #475569;">Fiches techniques produits, procédures validées, rapports
+                            d'intervention, traçabilité des opérations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fréquences industrielles -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Planning d'intervention industriel</h2>
+            <div class="frequency-section">
+                <p style="text-align: center; color: #475569; margin-bottom: 20px;">Nous adaptons nos interventions à
+                    vos cycles de production</p>
+                <div class="frequency-options">
+                    <div class="frequency-option">
+                        <div class="frequency-title">Pendant arrêts nuit</div>
+                        <p style="color: #64748b; font-size: 0.9rem;">Interventions 22h-6h pour ne pas perturber la
+                            production. Idéal pour nettoyage quotidien.</p>
+                        <div style="margin-top: 10px; font-weight: bold; color: #ca8a04;">-30% sur les coûts</div>
+                    </div>
+                    <div class="frequency-option">
+                        <div class="frequency-title">Week-end</div>
+                        <p style="color: #64748b; font-size: 0.9rem;">Nettoyage hebdomadaire approfondi. Arrêt complet
+                            des machines possible.</p>
+                        <div style="margin-top: 10px; font-weight: bold; color: #ca8a04;">Samedi/Dimanche</div>
+                    </div>
+                    <div class="frequency-option">
+                        <div class="frequency-title">Arrêts techniques</div>
+                        <p style="color: #64748b; font-size: 0.9rem;">Grand nettoyage pendant arrêts programmés
+                            (vacances, maintenance). Nettoyage complet.</p>
+                        <div style="margin-top: 10px; font-weight: bold; color: #ca8a04;">Sur devis</div>
+                    </div>
+                    <div class="frequency-option">
+                        <div class="frequency-title">Ponctuel urgent</div>
+                        <p style="color: #64748b; font-size: 0.9rem;">Intervention rapide suite à incident (fuite,
+                            déversement, inspection).</p>
+                        <div style="margin-top: 10px; font-weight: bold; color: #ca8a04;">Sous 4h</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processus -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Notre méthodologie industrielle</h2>
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-check">1</div>
+                    <div class="included-content">
+                        <h3>Audit sécurité & besoins</h3>
+                        <p>Visite complète avec responsable sécurité, identification des risques, analyse des
+                            contraintes de production, planning d'intervention.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">2</div>
+                    <div class="included-content">
+                        <h3>Protocole personnalisé</h3>
+                        <p>Élaboration d'un protocole spécifique : produits adaptés, équipements nécessaires, planning
+                            horaire, mesures de sécurité.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">3</div>
+                    <div class="included-content">
+                        <h3>Briefing sécurité</h3>
+                        <p>Formation de l'équipe sur site, rappel des procédures de sécurité, vérification des EPI,
+                            signature des registres.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">4</div>
+                    <div class="included-content">
+                        <h3>Intervention contrôlée</h3>
+                        <p>Nettoyage selon protocole établi, respect des consignes sécurité, communication permanente
+                            avec le responsable site.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">5</div>
+                    <div class="included-content">
+                        <h3>Contrôle qualité</h3>
+                        <p>Vérification point par point, prélèvements si nécessaire (agroalimentaire), ajustements
+                            immédiats, satisfaction client.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">6</div>
+                    <div class="included-content">
+                        <h3>Reporting détaillé</h3>
+                        <p>Rapport complet avec photos, consommation produits, observations, suggestions d'amélioration,
+                            planning prochaine intervention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section-white">
+        <div class="container">
+            <div class="certifications">
+                <h2 class="section-title" style="color: #713f12;">Nos certifications industrielles</h2>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; color: #713f12;">Sécurité travail</div>
+                            <div style="font-size: 0.85rem; color: #64748b;">Formation sécurité industrie</div>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; color: #713f12;">HACCP</div>
+                            <div style="font-size: 0.85rem; color: #64748b;">Agroalimentaire</div>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-radiation-alt"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; color: #713f12;">ATEX</div>
+                            <div style="font-size: 0.85rem; color: #64748b;">Zones explosives</div>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; color: #713f12;">Reach</div>
+                            <div style="font-size: 0.85rem; color: #64748b;">Produits chimiques</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Questions techniques - Industriel</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Comment gérez-vous la sécurité dans nos installations ?</button>
+                    <div class="faq-answer">
+                        <p>Nous établissons un protocole sécurité spécifique avec votre responsable HSE. Nos équipes
+                            suivent les procédures de cadenassage, portent les EPI requis, et sont formées aux risques
+                            spécifiques de votre site. Un briefing sécurité est effectué avant chaque intervention.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Pouvez-vous intervenir pendant la production ?</button>
+                    <div class="faq-answer">
+                        <p>Pour des raisons de sécurité, nous recommandons des interventions hors production (nuit,
+                            week-end, arrêts techniques). Pour certains postes isolés, un nettoyage pendant production
+                            peut être possible avec mesures de sécurité renforcées et isolement de la zone.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Quels produits utilisez-vous pour le dégraissage industriel ?</button>
+                    <div class="faq-answer">
+                        <p>Nous utilisons des dégraissants professionnels biodégradables, adaptés au type de graisse
+                            (minérale, végétale, synthétique). Pour l'agroalimentaire, nous utilisons des produits
+                            agréés contact alimentaire. Fiches techniques disponibles sur demande.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment calculez-vous le coût pour une usine ?</button>
+                    <div class="faq-answer">
+                        <p>Sur base de : surface à nettoyer, fréquence, spécificités techniques (hauteur sous plafond,
+                            type de sol, équipements), contraintes horaires, et produits nécessaires. Nous fournissons
+                            un devis détaillé par zone avec options possibles.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous des contrats de maintenance industrielle ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, nous proposons des contrats annuels avec planning prévisionnel, tarifs préférentiels,
+                            priorité sur les interventions, et reporting mensuel. Les contrats incluent généralement
+                            nettoyage régulier + quelques interventions ponctuelles.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Êtes-vous équipés pour les grandes surfaces (>10.000m²) ?</button>
+                    <div class="faq-answer">
+                        <p>Absolument. Notre parc machines inclut des autolaveuses ride-on pour surfaces jusqu'à
+                            15.000m²,
+                            des aspirateurs industriels 500L, et nous pouvons déployer plusieurs équipes simultanément
+                            pour les très grandes surfaces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section-white">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Productivité améliorée par la propreté</h2>
+                <p>Un environnement industriel propre réduit les risques d'accidents, améliore l'efficacité des
+                    équipements, et assure la conformité réglementaire. Confiez votre nettoyage industriel à des
+                    professionnels qualifiés.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="openChatbot('industriel')">
+                        <i class="fas fa-industry"></i> Devis industriel
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-hard-hat"></i> Audit sécurité gratuit
+                    </a>
+                    <a href="tel:+32478951269" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Urgence industrielle
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-info-circle"></i> Interventions 24h/24 - Équipements lourds - Personnel qualifié
+                    sécurité
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Chatbot Container -->
+
+    <!-- WhatsApp Float -->
+
+    <!-- JavaScript -->
+
+    <script>
+        // Script spécifique pour la page industriel
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animation pour les éléments sécurité
+            const safetyItems = document.querySelectorAll('.safety-item');
+            safetyItems.forEach(item => {
+                item.style.animationDelay = (Math.random() * 0.5) + 's';
+            });
+
+            // Calculateur de surface industrielle
+            const calculateIndustrialQuote = () => {
+                const surface = prompt("Surface à nettoyer (m²) ?");
+                const type = prompt("Type d'industrie ?\n1. Manufacturier\n2. Agroalimentaire\n3. Entrepôt\n4. Chimique");
+                const frequency = prompt("Fréquence ?\n1. Quotidien\n2. Hebdomadaire\n3. Mensuel\n4. Ponctuel");
+
+                if (surface && type && frequency) {
+                    let basePrice = parseInt(surface) * 0.5; // 0.5€/m² de base
+
+                    // Majorations selon type
+                    if (type.includes('Agro')) basePrice *= 1.3; // +30% pour HACCP
+                    if (type.includes('Chim')) basePrice *= 1.5; // +50% pour risques
+
+                    // Réductions selon fréquence
+                    if (frequency.includes('Quotid')) basePrice *= 0.7; // -30% pour contrat régulier
+                    if (frequency.includes('Hebdo')) basePrice *= 0.8; // -20%
+
+                    const formattedPrice = new Intl.NumberFormat('fr-BE', { style: 'currency', currency: 'EUR' }).format(Math.round(basePrice));
+
+                    let frequencyText = '';
+                    if (frequency.includes('Quotid')) frequencyText = 'par mois';
+                    else if (frequency.includes('Hebdo')) frequencyText = 'par mois';
+                    else if (frequency.includes('Mens')) frequencyText = 'par intervention';
+                    else frequencyText = 'ponctuel';
+
+                    showNotification(`Devis estimé : ${formattedPrice} ${frequencyText} pour ${surface}m² (${type})`, 'info');
+                    localStorage.setItem('industrialQuote', Math.round(basePrice));
+                }
+            };
+
+            // Gestion bouton devis
+            document.querySelector('[onclick*="industriel"]').addEventListener('click', function (e) {
+                if (this.textContent.includes('Devis')) {
+                    e.preventDefault();
+                    calculateIndustrialQuote();
+                }
+            });
+
+            // Animation équipements
+            const equipmentCards = document.querySelectorAll('.equipment-card');
+            equipmentCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Simulation calcul productivité
+            const productivityCalculator = () => {
+                const downtime = prompt("Temps d'arrêt mensuel pour nettoyage (heures) ?", "20");
+                const hourlyCost = prompt("Coût horaire de production (€/h) ?", "150");
+
+                if (downtime && hourlyCost) {
+                    const currentCost = downtime * hourlyCost;
+                    const optimizedCost = (downtime * 0.5) * hourlyCost; // Réduction de 50% du temps
+                    const savings = currentCost - optimizedCost;
+
+                    showNotification(`Optimisation possible : économie de ${savings.toFixed(0)}€/mois en réduisant les arrêts de 50%`, 'success');
+                }
+            };
+
+            // Écouteur pour bouton audit
+            document.querySelector('[href*="contact"]').addEventListener('click', function (e) {
+                if (this.textContent.includes('Audit')) {
+                    e.preventDefault();
+                    productivityCalculator();
+                }
+            });
+
+            // Animation certifications
+            const certItems = document.querySelectorAll('.cert-item');
+            certItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+                item.classList.add('animate-cert');
+            });
+        });
+
+        function showNotification(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-bell"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+
+            setTimeout(() => toast.classList.add('show'), 100);
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+
+        // Fonction pour afficher les détails équipements
+        function showEquipmentDetails(type) {
+            const details = {
+                'autolaveuse': 'Autolaveuse ride-on : Débit 8.000m²/h, réservoir 200L, largeur 1.2m',
+                'aspirateur': 'Aspirateur industriel : 500L, filtration HEPA H14, 3.000W, mobile',
+                'hp': 'Nettoyeur HP : 500 bar, eau chaude 80°C, débit 20L/min, chariot',
+                'balayeuse': 'Balayeuse mécanique : Largeur 1.8m, bac 300L, aspiration cyclonique'
+            };
+
+            if (details[type]) {
+                showNotification(details[type], 'info');
+            }
+        }
+    </script>
+
+    <style>
+        .toast-notification {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #1a365d;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            max-width: 350px;
+        }
+
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-notification.success {
+            background: #ca8a04;
+        }
+
+        .toast-notification.info {
+            background: #3b82f6;
+        }
+
+        .toast-notification i {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description-content,
+        .clients-grid,
+        .equipment-section,
+        .safety-grid,
+        .frequency-section,
+        .included-grid,
+        .certifications,
+        .faq-list,
+        .cta-box {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Animation spécifique équipements */
+        .equipment-card {
+            opacity: 0;
+            animation: equipmentSlide 0.5s ease-out forwards;
+        }
+
+        @keyframes equipmentSlide {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation certifications */
+        .cert-item.animate-cert {
+            animation: certPulse 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes certPulse {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Badge industriel animé */
+        .industriel-badge {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            animation: badgeShine 3s infinite;
+        }
+
+        .industriel-badge:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes badgeShine {
+            0% {
+                box-shadow: 0 0 0 0 rgba(202, 138, 4, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 5px rgba(202, 138, 4, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(202, 138, 4, 0);
+            }
+        }
+
+        /* Animation cartes sécurité */
+        .safety-card {
+            transition: transform 0.3s ease;
+        }
+
+        .safety-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Animation fréquences */
+        .frequency-option {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .frequency-option:hover {
+            transform: scale(1.02);
+        }
+
+        /* Indicateur visuel pour équipements */
+        .equipment-card:hover .equipment-icon {
+            animation: iconSpin 1s ease;
+        }
+
+        @keyframes iconSpin {
+            0% {
+                transform: rotate(0);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    
+    <!-- WhatsApp Flottant -->
+    
+    <div id="footer-container"></div>
+    <script src="/public/js/app.js" defer></script>
+
+    <!-- FAQ STYLES + JAVASCRIPT -->
+    <style>
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #2C5AA0;
+            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.1);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1f2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.9rem;
+            color: #2C5AA0;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+        .faq-item.is-open .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.is-open .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .faq-answer p {
+            color: #4b5563;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+    <script>
+    console.log('🔧 FAQ JavaScript chargé');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            console.log('📊 FAQ items:', faqItems.length);
+            if (faqItems.length === 0) return;
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.faq-question');
+                if (!question) return;
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const wasOpen = item.classList.contains('is-open');
+                    faqItems.forEach(otherItem => otherItem.classList.remove('is-open'));
+                    if (!wasOpen) {
+                        item.classList.add('is-open');
+                        console.log('✅ FAQ', index + 1, 'ouverte');
+                    }
+                });
+            });
+            console.log('✅ FAQ OK');
+        }, 300);
+    });
+    </script>
+
+</body>
+
+</html>

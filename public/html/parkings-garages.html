@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettoyage Parkings & Garages - Morais Cleaning</title>
+    <meta name="description"
+        content="Service professionnel de nettoyage de parkings et garages à Bruxelles. Lavage haute pression, dégraissage, traitement des sols, évacuation des déchets. Équipement industriel.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    
+    <link rel="stylesheet" href="/public/css/components/whatsapp.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+    <style>
+        .parking-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #8b5cf6;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        .industrial-note {
+            background: #f5f3ff;
+            border-left: 4px solid #8b5cf6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .parking-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .parking-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .parking-feature i {
+            color: #a78bfa;
+            font-size: 1.2rem;
+        }
+
+        .type-parking {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #8b5cf6;
+            transition: transform 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .type-parking:hover {
+            transform: translateY(-5px);
+        }
+
+        .parking-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26, 54, 93, 0.92), rgba(26, 54, 93, 0.88));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-feature i {
+            font-size: 1.2rem;
+            color: #a78bfa;
+        }
+
+        .description-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .description-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .description-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .industrial-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #8b5cf6;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 15px;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .safety-item {
+            border-left: 4px solid #8b5cf6;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .safety-item h3 {
+            color: #8b5cf6;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-features {
+                gap: 20px;
+            }
+
+            .hero-feature {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .industrial-badge {
+                display: block;
+                margin: 10px auto;
+                width: fit-content;
+            }
+        }
+
+        /* Visual polish */
+        .hero-bg-image {
+            filter: brightness(0.5);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .service-hero:hover .hero-bg-image {
+            transform: scale(1.02);
+            filter: brightness(0.55);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(10, 25, 57, 0.7), rgba(10, 25, 57, 0.6));
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #e6eefb;
+            max-width: 700px;
+        }
+
+        .hero-actions .btn {
+            border-radius: 8px;
+            padding: 10px 18px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+        }
+
+        .hero-actions .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+
+        /* Clients grid - STRUCTURE IDENTIQUE */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 12px;
+            align-items: start;
+        }
+
+        .client-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+            text-align: left;
+            transition: transform .18s ease, box-shadow .18s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .client-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(2, 6, 23, 0.10);
+        }
+
+        .client-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+            color: #1e3a8a;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .client-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .client-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .client-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #475569;
+            background: rgba(15, 23, 42, 0.03);
+            padding: 4px 8px;
+            border-radius: 999px;
+            margin-top: 6px;
+        }
+
+        .clients-cta {
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        .clients-cta .btn {
+            padding: 10px 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Included steps: number badges */
+        .included-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .included-check {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #eef2ff;
+            color: #8b5cf6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Thumbnails and CTAs */
+        .client-thumb img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .client-card {
+            padding: 18px;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+        }
+
+        .clients-cta .btn-primary {
+            background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+            border: none;
+            color: #fff;
+        }
+
+        .clients-cta .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            color: #0f172a;
+        }
+
+        .industrial-note {
+            font-size: 0.9rem;
+            color: #374151;
+            margin-top: 10px;
+            opacity: 0.95;
+        }
+
+        /* Small screen tweaks */
+        @media (max-width: 620px) {
+            .client-thumb img {
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+            }
+
+            .client-card {
+                padding: 14px;
+            }
+
+            .clients-cta .btn {
+                width: 100%;
+                display: block;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+    </head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Banner -->
+    <section class="service-hero">
+        <!-- IMAGE BANNIÈRE POUR PARKINGS & GARAGES -->
+        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Parking souterrain propre et bien éclairé" class="hero-bg-image" loading="lazy">
+
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Nettoyage Parkings & Garages <span class="industrial-badge"><i
+                            class="fas fa-industry"></i> Équipement industriel</span></h1>
+
+                <p class="hero-subtitle">
+                    Service professionnel de nettoyage et d'entretien des parkings et garages à Bruxelles. Lavage haute
+                    pression, dégraissage des sols, traitement des tâches d'huile, évacuation des déchets. Sécurité et
+                    propreté garanties.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openChatbot('parkings-garages')">
+                        <i class="fas fa-parking"></i> Devis parking
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Appeler maintenant
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="parking-feature">
+                        <i class="fas fa-tint"></i>
+                        <span>Lavage haute pression</span>
+                    </div>
+                    <div class="parking-feature">
+                        <i class="fas fa-oil-can"></i>
+                        <span>Dégraissage professionnel</span>
+                    </div>
+                    <div class="parking-feature">
+                        <i class="fas fa-recycle"></i>
+                        <span>Évacuation des déchets</span>
+                    </div>
+                    <div class="parking-feature">
+                        <i class="fas fa-hard-hat"></i>
+                        <span>Signalisation & sécurité</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description -->
+    <section class="section-white">
+        <div class="container">
+            <div class="description-content">
+                <div class="description-text">
+                    <h2>Des parkings propres et sécurisés</h2>
+                    <p>Les parkings et garages sont des espaces à forte fréquentation qui nécessitent un entretien
+                        régulier et professionnel. Salissures, taches d'huile, déchets et poussières s'accumulent
+                        rapidement, créant des risques de glissade et une mauvaise image.</p>
+                    <p>Notre service spécialisé utilise des équipements industriels adaptés aux grandes surfaces :
+                        balayeuses automatiques, laveuses haute pression, aspirateurs industriels et produits de
+                        dégraissage professionnels. Nous intervenons avec un planning adapté pour minimiser les
+                        perturbations.</p>
+                    <div class="safety-item">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Prévention des risques</h3>
+                        <p>Un parking propre réduit considérablement les risques d'accidents. Élimination des taches
+                            d'huile (risque de glissade), meilleure visibilité de la signalisation, évacuation des
+                            déchets inflammables.</p>
+                    </div>
+                </div>
+
+                <div class="description-image">
+                    <!-- PHOTO POUR LA SECTION DESCRIPTION -->
+                    <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Lavage haute pression d'un parking" loading="lazy" class="rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types de parkings - 6 CARTES -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Nos solutions parking</h2>
+            <div class="clients-grid">
+                <!-- Carte 1 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Parkings souterrains"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-subway"></i></div>
+                    <h3>Parkings souterrains</h3>
+                    <div class="client-tag">Immeubles & centres</div>
+                    <p>Nettoyage complet des parkings souterrains : sols, murs, plafonds, gaines de ventilation.
+                        Traitement spécifique pour l'humidité et la condensation.</p>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Parkings aériens"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-car"></i></div>
+                    <h3>Parkings aériens</h3>
+                    <div class="client-tag">Centres commerciaux</div>
+                    <p>Entretien des parkings en surface : balayage mécanique, lavage haute pression, traitement des
+                        marquages au sol, nettoyage des panneaux de signalisation.</p>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://images.unsplash.com/photo-1587174486073-ae7e6c84b587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Garages résidentiels"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-home"></i></div>
+                    <h3>Garages résidentiels</h3>
+                    <div class="client-tag">Copropriétés</div>
+                    <p>Nettoyage des garages d'immeuble : évacuation des encombrants, dégraissage des places,
+                        nettoyage des box individuels, entretien des parties communes.</p>
+                </div>
+
+                <!-- Carte 4 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Parkings d'entreprise"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-building"></i></div>
+                    <h3>Parkings d'entreprise</h3>
+                    <div class="client-tag">Sociétés & bureaux</div>
+                    <p>Entretien régulier des parkings privés d'entreprise : zones visiteurs, places réservées,
+                        accès PMR, parkings sécurisés. Planning adapté aux horaires d'activité.</p>
+                </div>
+
+                <!-- Carte 5 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Parkings publics"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                    <h3>Parkings publics</h3>
+                    <div class="client-tag">Municipalités</div>
+                    <p>Service de nettoyage pour parkings municipaux : guichets automatiques, ascenseurs, escaliers,
+                        sanitaires publics, éclairage. Conformité aux normes d'hygiène publiques.</p>
+                </div>
+
+                <!-- Carte 6 -->
+                <div class="client-card">
+                    <div class="client-thumb"><img
+                            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Parkings logistiques"></div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-truck"></i></div>
+                    <h3>Parkings logistiques</h3>
+                    <div class="client-tag">Entrepôts & zones industrielles</div>
+                    <p>Nettoyage intensif des aires de stationnement poids lourds, dégraissage des taches d'huile
+                        importantes, traitement des sols en béton haute résistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inclus dans le service -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Notre processus industriel</h2>
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-check">1</div>
+                    <div class="included-content">
+                        <h3>Analyse & préparation</h3>
+                        <p>Évaluation des surfaces, type de sols (béton, asphalte, résine), niveau de salissure.
+                            Mise en place de la signalisation temporaire et protection des zones sensibles.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">2</div>
+                    <div class="included-content">
+                        <h3>Balayage mécanique</h3>
+                        <p>Utilisation de balayeuses automatiques professionnelles pour éliminer les gros déchets,
+                            graviers, sable, feuilles. Couverture complète de la surface à traiter.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">3</div>
+                    <div class="included-content">
+                        <h3>Pré-traitement des taches</h3>
+                        <p>Application de dégraissants professionnels sur les taches d'huile, de graisse, de
+                            carburant. Temps de pose adapté à l'ancienneté des taches.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">4</div>
+                    <div class="included-content">
+                        <h3>Lavage haute pression</h3>
+                        <p>Utilisation de laveuses industrielles avec eau chaude (option) et détergents adaptés.
+                            Pression ajustée selon le type de sol pour un nettoyage profond sans dommage.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">5</div>
+                    <div class="included-content">
+                        <h3>Rinçage & aspiration eaux</h3>
+                        <p>Rinçage complet pour éliminer tous les résidus de produits. Aspiration des eaux usées
+                            avec pompes industrielles. Respect des normes de rejet des eaux.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">6</div>
+                    <div class="included-content">
+                        <h3>Contrôle & finitions</h3>
+                        <p>Vérification de l'absence de taches résiduelles, propreté des murs et signalisation.
+                            Nettoyage des bouches d'égout, regard de visite. Rapport d'intervention détaillé.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipement spécialisé -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Équipement industriel professionnel</h2>
+            <div class="method-steps">
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-tractor"></i></div>
+                    <h3>Balayeuses automatiques</h3>
+                    <p>Machines professionnelles pour grandes surfaces. Largeur de balayage jusqu'à 1,8m, capacité
+                        de ramassage importante, fonctionnement électrique ou thermique.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-tint"></i></div>
+                    <h3>Laveuses haute pression</h3>
+                    <p>Unités mobiles de lavage haute pression. Pression réglable (100-200 bars), débit d'eau
+                        important, réservoir d'eau et de produits intégrés.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-wind"></i></div>
+                    <h3>Aspirateurs industriels</h3>
+                    <p>Aspirateurs haute puissance pour eaux et boues. Filtration HEPA, grande capacité de
+                        récupération, adaptés aux sols humides et secs.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-oil-can"></i></div>
+                    <h3>Produits dégraissants</h3>
+                    <p>Gamme professionnelle de dégraissants biodégradables. Efficaces sur huiles minérales,
+                        graisses animales et végétales, carburants. Conforme aux normes environnementales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Questions parkings fréquentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Combien de temps faut-il prévoir pour la fermeture d'un parking pendant
+                        le nettoyage ?</button>
+                    <div class="faq-answer">
+                        <p>Cela dépend de la taille du parking. Pour un parking moyen (100 places), nous préconisons
+                            généralement une fermeture de 4 à 6 heures. Pour les très grands parkings, nous
+                            procédons par sections pour minimiser les perturbations. Nous travaillons principalement
+                            la nuit ou le dimanche pour les parkings commerciaux.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment traitez-vous les taches d'huile anciennes et incrustées
+                        ?</button>
+                    <div class="faq-answer">
+                        <p>Pour les taches anciennes, nous utilisons un traitement spécifique : application de
+                            dégraissant concentré avec temps de pose prolongé (jusqu'à 24h), brossage mécanique, puis
+                            lavage haute pression. Dans les cas extrêmes, nous proposons un traitement de surface
+                            (sablage ou hydrogommage) pour restaurer complètement le sol.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Que faites-vous des eaux usées du lavage ?</button>
+                    <div class="faq-answer">
+                        <p>Nous respectons strictement la réglementation bruxelloise sur les eaux usées. Les eaux
+                            sont collectées par nos aspirateurs industriels et traitées si nécessaire. Pour les
+                            parkings équipés de séparateurs d'hydrocarbures, nous vérifions leur bon fonctionnement.
+                            Nous fournissons les certificats de traitement des eaux sur demande.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous l'entretien des marquages au sol ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, nous proposons un service complet d'entretien des marquages au sol : nettoyage des
+                            lignes existantes, signalisation temporaire pendant les travaux. Nous collaborons avec
+                            des entreprises spécialisées en marquage routier pour le repavage complet si nécessaire.
+                            Nous pouvons inclure cette prestation dans un contrat d'entretien annuel.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment gérez-vous la sécurité pendant les interventions ?</button>
+                    <div class="faq-answer">
+                        <p>La sécurité est notre priorité. Nous mettons en place : signalisation temporaire
+                            conforme au code de la route, balisage lumineux, personnel en tenue haute visibilité,
+                            véhicules équipés de gyrophares. Nos opérateurs sont formés aux risques spécifiques des
+                            travaux en milieu de circulation (même réduite).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous des contrats d'entretien régulier pour les parkings
+                        ?</button>
+                    <div class="faq-answer">
+                        <p>Absolument. Nos contrats d'entretien incluent généralement : balayage mécanique
+                            hebdomadaire ou bi-hebdomadaire, lavage haute pression mensuel ou trimestriel,
+                            dégraissage ponctuel des taches, évacuation régulière des déchets, entretien des
+                            bouches d'égout. Tarifs dégressifs selon la fréquence et la surface.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section-gray">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Un parking propre : sécurité et image professionnelle</h2>
+                <p>L'entretien régulier de votre parking ou garage améliore la sécurité des usagers, prolonge la
+                    durée de vie des revêtements et renforce l'image professionnelle de votre établissement.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="openChatbot('parkings-garages')">
+                        <i class="fas fa-parking"></i> Devis gratuit
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Audit parking
+                    </a>
+                    <a href="tel:+32478951269" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Urgence nettoyage
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-info-circle"></i> Interventions 24h/24 pour parkings commerciaux - Forfaits annuels
+                    avantageux
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    
+    <!-- WhatsApp Flottant -->
+    
+    <div id="footer-container"></div>
+
+    <!-- Chatbot Container -->
+
+    <!-- WhatsApp Float -->
+
+    <!-- JavaScript -->
+
+    <script>
+        // Script spécifique pour la page parkings & garages
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animation pour les éléments sécurité
+            const safetyItems = document.querySelectorAll('.safety-item');
+            safetyItems.forEach(item => {
+                item.style.animationDelay = (Math.random() * 0.5) + 's';
+            });
+
+            // Gestion du bouton devis parking
+            const parkingBtn = document.querySelector('.btn-primary');
+            if (parkingBtn) {
+                parkingBtn.addEventListener('click', function () {
+                    localStorage.setItem('parkingService', 'parkings-garages');
+                    showNotification('Demande de devis parking enregistrée. Notre service technique vous contactera sous 24h.', 'success');
+                });
+            }
+
+            // Préchargement des images
+            const images = [
+                'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            ];
+
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+
+        function showNotification(message, type) {
+            // Créer une notification toast
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-parking"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+
+            // Afficher
+            setTimeout(() => toast.classList.add('show'), 100);
+
+            // Supprimer après 5 secondes
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+    </script>
+
+    <style>
+        .toast-notification {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #8b5cf6;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-notification.success {
+            background: #10b981;
+        }
+
+        .toast-notification i {
+            font-size: 1.2rem;
+        }
+
+        /* Animation pour les éléments */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description-content,
+        .clients-grid,
+        .included-grid,
+        .method-steps,
+        .faq-list,
+        .cta-box {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+    <script src="/public/js/app.js" defer></script>
+
+    <!-- FAQ STYLES + JAVASCRIPT -->
+    <style>
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #2C5AA0;
+            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.1);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1f2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.9rem;
+            color: #2C5AA0;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+        .faq-item.is-open .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.is-open .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .faq-answer p {
+            color: #4b5563;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+    <script>
+    console.log('🔧 FAQ JavaScript chargé');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            console.log('📊 FAQ items:', faqItems.length);
+            if (faqItems.length === 0) return;
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.faq-question');
+                if (!question) return;
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const wasOpen = item.classList.contains('is-open');
+                    faqItems.forEach(otherItem => otherItem.classList.remove('is-open'));
+                    if (!wasOpen) {
+                        item.classList.add('is-open');
+                        console.log('✅ FAQ', index + 1, 'ouverte');
+                    }
+                });
+            });
+            console.log('✅ FAQ OK');
+        }, 300);
+    });
+    </script>
+
+</body>
+
+</html>

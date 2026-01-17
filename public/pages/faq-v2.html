@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Questions Fréquentes - Morais Cleaning</title>
+    <meta name="description" content="Réponses aux questions fréquentes sur nos services de nettoyage professionnel.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+    <link rel="stylesheet" href="../css/components/whatsapp.css">
+    
+    <style>
+        /* FAQ STYLES INTÉGRÉS */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.2rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        
+        .faq-item:hover {
+            border-color: #2C5AA0;
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.12);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem 1.75rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        
+        .faq-question span {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .faq-question span i {
+            color: #2C5AA0;
+            font-size: 1.2rem;
+        }
+        
+        .faq-icon {
+            color: #2C5AA0;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.is-open .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.75rem;
+            color: #4b5563;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        .faq-item.is-open .faq-answer {
+            max-height: 500px;
+            padding: 0 1.75rem 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-question {
+                font-size: 1rem;
+                padding: 1.2rem 1rem;
+            }
+            
+            .faq-question span {
+                gap: 8px;
+            }
+            
+            .faq-question span i {
+                font-size: 1rem;
+            }
+            
+            .faq-answer {
+                font-size: 0.95rem;
+            }
+            
+            .faq-item.is-open .faq-answer {
+                padding: 0 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Page FAQ -->
+    <main style="padding-top: 120px; padding-bottom: 80px; min-height: 70vh;">
+        <div class="container">
+            <!-- En-tête -->
+            <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+                <h1 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 16px;">Questions Fréquentes (FAQ)</h1>
+                <p style="font-size: 1.2rem; color: var(--gray-color);">Trouvez rapidement les réponses à vos questions</p>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="faq-container">
+                
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>
+                            <i class="fas fa-question-circle"></i>
+                            Quels sont vos tarifs de nettoyage ?
+                        </span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nos tarifs varient selon le type de service, la surface à nettoyer et la fréquence d'intervention. Contactez-nous pour un devis gratuit et personnalisé adapté à vos besoins spécifiques.</p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>
+                            <i class="fas fa-question-circle"></i>
+                            Êtes-vous disponibles le weekend et les jours fériés ?
+                        </span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui ! Nous sommes disponibles 24h/7j, y compris les weekends et jours fériés. Nous nous adaptons à vos horaires pour minimiser l'impact sur votre activité.</p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>
+                            <i class="fas fa-question-circle"></i>
+                            Utilisez-vous des produits écologiques ?
+                        </span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolument ! Nous utilisons principalement des produits écologiques certifiés, respectueux de l'environnement et de votre santé. Tous nos produits sont conformes aux normes européennes.</p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>
+                            <i class="fas fa-question-circle"></i>
+                            Fournissez-vous le matériel et les produits ?
+                        </span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui, nous fournissons tout le matériel professionnel et les produits nécessaires. Nos équipements sont de haute qualité et adaptés à chaque type de surface.</p>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>
+                            <i class="fas fa-question-circle"></i>
+                            Êtes-vous assurés ?
+                        </span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui, nous disposons d'une assurance responsabilité civile professionnelle complète. Tous nos employés sont formés et couverts par notre assurance.</p>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>
+                            <i class="fas fa-question-circle"></i>
+                            Quel est le délai d'intervention ?
+                        </span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pour les interventions d'urgence, nous pouvons intervenir dans les 24 heures. Pour les prestations planifiées, nous nous adaptons à votre planning selon vos disponibilités.</p>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>
+                            <i class="fas fa-question-circle"></i>
+                            Intervenez-vous en Belgique et en Suisse ?
+                        </span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui ! Nous intervenons en Belgique (principalement Bruxelles et région) et en Suisse (cantons de Vaud et Valais). Contactez-nous pour vérifier la couverture de votre zone.</p>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>
+                            <i class="fas fa-question-circle"></i>
+                            Comment se déroule un premier contact ?
+                        </span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Contactez-nous via notre formulaire, téléphone ou WhatsApp. Nous programmons ensuite une visite gratuite pour évaluer vos besoins et vous proposer un devis détaillé sans engagement.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Carte Contact -->
+            <div style="max-width: 900px; margin: 60px auto 0; padding: 40px; background: var(--primary-color); color: white; border-radius: 16px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+                <h3 style="font-size: 1.8rem; margin-bottom: 16px;">Vous n'avez pas trouvé votre réponse ?</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 24px; opacity: 0.95;">Notre équipe est à votre disposition pour répondre à toutes vos questions</p>
+                <a href="./contact.html" class="btn" style="background: white; color: var(--primary-color); padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s;">
+                    <i class="fas fa-comments" style="margin-right: 8px;"></i>Contactez-nous
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- WhatsApp flottant -->
+
+    <!-- Scripts -->
+    <script src="../js/app.js" defer></script>
+    
+    <!-- FAQ JavaScript intégré (GARANTIT que ça marche) -->
+    <script>
+        console.log('🔧 FAQ JavaScript intégré chargé');
+        
+        // Attendre que tout soit chargé
+        window.addEventListener('load', function() {
+            console.log('📄 Page complètement chargée, initialisation FAQ...');
+            
+            // Petite pause pour laisser app.js se charger
+            setTimeout(function() {
+                const faqItems = document.querySelectorAll('.faq-item');
+                
+                console.log('📊 Nombre de FAQ items trouvés:', faqItems.length);
+                
+                if (faqItems.length === 0) {
+                    console.error('❌ Aucun item FAQ trouvé !');
+                    return;
+                }
+                
+                faqItems.forEach((item, index) => {
+                    const question = item.querySelector('.faq-question');
+                    
+                    if (!question) {
+                        console.error('❌ Bouton question non trouvé pour item', index);
+                        return;
+                    }
+                    
+                    question.addEventListener('click', function() {
+                        console.log('🖱️ Clic sur question', index + 1);
+                        
+                        const wasOpen = item.classList.contains('is-open');
+                        
+                        // Fermer tous les autres
+                        faqItems.forEach(otherItem => {
+                            otherItem.classList.remove('is-open');
+                        });
+                        
+                        // Ouvrir celui-ci si il était fermé
+                        if (!wasOpen) {
+                            item.classList.add('is-open');
+                            console.log('✅ Question', index + 1, 'ouverte');
+                        } else {
+                            console.log('✅ Question', index + 1, 'fermée');
+                        }
+                    });
+                });
+                
+                console.log('✅✅✅ FAQ initialisée avec succès !');
+                
+            }, 500); // Attendre 500ms
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettoyage de Copropriétés - Morais Cleaning</title>
+    <meta name="description"
+        content="Service professionnel de nettoyage et entretien pour copropriétés à Bruxelles. Entretien des parties communes, cages d'escalier, halls, ascenseurs, parkings. Contrats sur mesure pour syndics.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    
+    <link rel="stylesheet" href="/public/css/components/whatsapp.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+    <style>
+        .copropriete-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #8b5cf6;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        .syndic-note {
+            background: #faf5ff;
+            border-left: 4px solid #8b5cf6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .copropriete-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .copropriete-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .copropriete-feature i {
+            color: #a78bfa;
+            font-size: 1.2rem;
+        }
+
+        .type-copropriete {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #8b5cf6;
+            transition: transform 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .type-copropriete:hover {
+            transform: translateY(-5px);
+        }
+
+        .copropriete-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26, 54, 93, 0.92), rgba(26, 54, 93, 0.88));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-feature i {
+            font-size: 1.2rem;
+            color: #a78bfa;
+        }
+
+        .description-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .description-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .description-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .syndic-item {
+            border-left: 4px solid #8b5cf6;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .syndic-item h3 {
+            color: #8b5cf6;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-features {
+                gap: 20px;
+            }
+
+            .hero-feature {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .hero-bg-image {
+            filter: brightness(0.5);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .service-hero:hover .hero-bg-image {
+            transform: scale(1.02);
+            filter: brightness(0.55);
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: #e6eefb;
+            max-width: 700px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 12px;
+            align-items: start;
+        }
+
+        .client-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+            text-align: left;
+            transition: transform .18s ease, box-shadow .18s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .client-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(2, 6, 23, 0.10);
+        }
+
+        .client-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+            color: #1e3a8a;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .client-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .client-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .client-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #475569;
+            background: rgba(15, 23, 42, 0.03);
+            padding: 4px 8px;
+            border-radius: 999px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 1024px) {
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .included-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .included-check {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #eef2ff;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .client-thumb img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .client-card {
+            padding: 18px;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 620px) {
+            .client-thumb img {
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+            }
+
+            .client-card {
+                padding: 14px;
+            }
+        }
+
+        .common-badge {
+            background: rgba(139, 92, 246, 0.1);
+            color: #8b5cf6;
+        }
+
+        .technical-badge {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+        }
+
+        .special-badge {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
+        /* Stats pour copropriétés */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Tableau des fréquences */
+        .frequency-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            margin: 30px 0;
+        }
+
+        .table-header {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            color: white;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            font-weight: bold;
+        }
+
+        .table-row {
+            padding: 15px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid #e2e8f0;
+            align-items: center;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .frequency-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .frequency-daily {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+        }
+
+        .frequency-weekly {
+            background: rgba(59, 130, 246, 0.1);
+            color: #2563eb;
+        }
+
+        .frequency-monthly {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+    </style>
+    </head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Banner -->
+    <section class="service-hero">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Hall d'entrée luxueux d'une copropriété" class="hero-bg-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Nettoyage de Copropriétés <span class="copropriete-badge"><i
+                            class="fas fa-building"></i> Syndics & Conseils</span></h1>
+
+                <p class="hero-subtitle">
+                    Service complet d'entretien et de nettoyage pour copropriétés à Bruxelles. Parties communes,
+                    ascenseurs, parkings, halls d'entrée. Contrats sur mesure pour syndics et conseils de copropriété.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openChatbot('copropriete')">
+                        <i class="fas fa-file-contract"></i> Demander un devis
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Contacter un expert
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="copropriete-feature">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Planning sur mesure</span>
+                    </div>
+                    <div class="copropriete-feature">
+                        <i class="fas fa-users"></i>
+                        <span>Équipe dédiée</span>
+                    </div>
+                    <div class="copropriete-feature">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Rapports mensuels</span>
+                    </div>
+                    <div class="copropriete-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Assuré RC Pro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description -->
+    <section class="section-white">
+        <div class="container">
+            <div class="description-content">
+                <div class="description-text">
+                    <h2>Entretien professionnel pour copropriétés</h2>
+                    <p>L'entretien des parties communes est essentiel pour préserver la valeur immobilière, assurer la
+                        sécurité des résidents et maintenir une qualité de vie agréable. Notre service spécialisé pour
+                        copropriétés offre une solution complète et adaptée.</p>
+                    <p>Nous travaillons en étroite collaboration avec les syndics et conseils de copropriété pour
+                        établir
+                        des plannings sur mesure, respectant les contraintes horaires et les budgets alloués. Notre
+                        équipe est formée aux spécificités des immeubles collectifs.</p>
+                    <div class="syndic-item">
+                        <h3><i class="fas fa-chart-line"></i> Pour les syndics</h3>
+                        <p>Nous facilitons votre gestion avec des rapports détaillés, une facturation claire par lot, et
+                            une réactivité aux demandes spécifiques des copropriétaires.</p>
+                    </div>
+                </div>
+
+                <div class="description-image">
+                    <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Nettoyage professionnel d'un hall d'immeuble" loading="lazy" class="rounded">
+                </div>
+            </div>
+
+            <!-- Statistiques -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Disponibilité urgences</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Taux de satisfaction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Copropriétés à Bruxelles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Ans d'expérience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zones d'intervention -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Zones entretenues</h2>
+            <div class="clients-grid">
+                <!-- Carte 1 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://www.lorillard.fr/media/images/4516/square/w799/1636379325/porte_hall_interieure.jpg"
+                            alt="Hall d'entrée luxueux">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-door-open"></i></div>
+                    <h3>Halls & Entrées</h3>
+                    <div class="client-tag common-badge">Parties communes</div>
+                    <p>Nettoyage des sols (marbre, parquet, carrelage), vitres d'entrée, boîtes aux lettres,
+                        interphones,
+                        miroirs.</p>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://tm2a-environnement.fr/media/plg_jspeed/cache/images/bc213205ea0d7c6d9d2b0c73582728873988b19f.webp"
+                            alt="Cage d'escalier propre">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-stairs"></i></div>
+                    <h3>Cages d'Escalier</h3>
+                    <div class="client-tag common-badge">Circulation</div>
+                    <p>Nettoyage des marches, rampes, paliers, éclairage, dépoussiérage des murs, entretien des
+                        tapis.</p>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://static.actu.fr/uploads/2024/09/ascenseur-charges-coppropriete-960x640.jpg"
+                            alt="Ascenseur moderne">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-elevator"></i></div>
+                    <h3>Ascenseurs</h3>
+                    <div class="client-tag technical-badge">Équipements</div>
+                    <p>Nettoyage complet des cabines, miroirs, panneaux de commande, portes, désinfection des surfaces
+                        de
+                        contact.</p>
+                </div>
+
+                <!-- Carte 4 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://www.syndic-one.com/wp-content/uploads/2021/04/Le-stationnement-en-copropriete-en-7-questions-1.png"
+                            alt="Parking souterrain">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-car"></i></div>
+                    <h3>Parkings & Garages</h3>
+                    <div class="client-tag common-badge">Stationnement</div>
+                    <p>Balayage mécanique, lavage des sols, entretien des rampes, poubelles, éclairage, signalisation.
+                    </p>
+                </div>
+
+                <!-- Carte 5 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://www.circulareconomy.brussels/wp-content/uploads/2020/12/Bacs-potager-Engie-768x576.jpg"
+                            alt="Cour intérieure jardinée">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-tree"></i></div>
+                    <h3>Espaces Extérieurs</h3>
+                    <div class="client-tag special-badge">Extérieur</div>
+                    <p>Nettoyage des cours, terrasses, bancs, poubelles extérieures, entrées véhicules, déneigement en
+                        hiver.</p>
+                </div>
+
+                <!-- Carte 6 -->
+                <div class="client-card">
+                    <div class="client-thumb">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Local technique">
+                    </div>
+                    <div class="client-icon" aria-hidden="true"><i class="fas fa-cogs"></i></div>
+                    <h3>Locaux Techniques</h3>
+                    <div class="client-tag technical-badge">Maintenance</div>
+                    <p>Entretien des chaufferies, local poubelles, salles des machines, local vélo, espace rangement
+                        commun.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fréquences de nettoyage -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Fréquences recommandées</h2>
+            <div class="frequency-table">
+                <div class="table-header">
+                    <div>Zone</div>
+                    <div>Fréquence</div>
+                    <div>Durée estimée</div>
+                </div>
+                <div class="table-row">
+                    <div>Hall d'entrée & Réception</div>
+                    <div><span class="frequency-badge frequency-daily">Quotidien</span></div>
+                    <div>30-45 min/jour</div>
+                </div>
+                <div class="table-row">
+                    <div>Ascenseurs</div>
+                    <div><span class="frequency-badge frequency-daily">Quotidien</span></div>
+                    <div>15 min/jour par ascenseur</div>
+                </div>
+                <div class="table-row">
+                    <div>Cages d'escalier</div>
+                    <div><span class="frequency-badge frequency-weekly">Hebdomadaire</span></div>
+                    <div>2-3 h/semaine</div>
+                </div>
+                <div class="table-row">
+                    <div>Parkings souterrains</div>
+                    <div><span class="frequency-badge frequency-weekly">Hebdomadaire</span></div>
+                    <div>3-4 h/semaine</div>
+                </div>
+                <div class="table-row">
+                    <div>Espaces extérieurs</div>
+                    <div><span class="frequency-badge frequency-weekly">Hebdomadaire</span></div>
+                    <div>1-2 h/semaine</div>
+                </div>
+                <div class="table-row">
+                    <div>Locaux techniques</div>
+                    <div><span class="frequency-badge frequency-monthly">Mensuel</span></div>
+                    <div>2-3 h/mois</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: #64748b; margin-top: 20px; font-size: 0.9rem;">
+                * Les fréquences sont adaptables selon le budget et les spécificités de chaque copropriété.
+            </p>
+        </div>
+    </section>
+
+    <!-- Processus -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Notre procédure pour copropriétés</h2>
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-check">1</div>
+                    <div class="included-content">
+                        <h3>Audit initial gratuit</h3>
+                        <p>Visite complète de la copropriété, identification des zones, analyse des besoins spécifiques,
+                            rencontre avec le syndic.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">2</div>
+                    <div class="included-content">
+                        <h3>Proposition sur mesure</h3>
+                        <p>Établissement d'un planning personnalisé, devis détaillé par zone, propositions de fréquence,
+                            présentation au conseil.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">3</div>
+                    <div class="included-content">
+                        <h3>Mise en place</h3>
+                        <p>Affectation d'une équipe dédiée, remise des clés sécurisées, briefing complet, début des
+                            prestations.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">4</div>
+                    <div class="included-content">
+                        <h3>Nettoyage régulier</h3>
+                        <p>Interventions selon le planning établi, respect des horaires, utilisation de produits
+                            adaptés,
+                            discrétion assurée.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">5</div>
+                    <div class="included-content">
+                        <h3>Contrôle qualité</h3>
+                        <p>Vérifications régulières par un responsable, check-lists validées, ajustements si nécessaire,
+                            retour des résidents.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">6</div>
+                    <div class="included-content">
+                        <h3>Reporting mensuel</h3>
+                        <p>Envoi de rapports détaillés au syndic, photos des interventions, suivi des consommations,
+                            suggestions d'amélioration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages spécifiques -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir Morais Cleaning ?</h2>
+            <div class="method-steps">
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-user-shield"></i></div>
+                    <h3>Personnel vérifié</h3>
+                    <p>Tous nos agents sont contrôlés (casier judiciaire), formés spécifiquement et habilités à
+                        travailler
+                        en copropriété.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-file-contract"></i></div>
+                    <h3>Contrat clair</h3>
+                    <p>Contrat détaillé avec engagement sur les résultats, clauses de résiliation flexible, facturation
+                        transparente.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-headset"></i></div>
+                    <h3>Point de contact unique</h3>
+                    <p>Un responsable dédié à votre copropriété pour toutes les communications, urgences et
+                        ajustements.</p>
+                </div>
+                <div class="method-step">
+                    <div class="step-number"><i class="fas fa-tools"></i></div>
+                    <h3>Matériel professionnel</h3>
+                    <p>Équipement industriel (autolaveuses, aspirateurs eau/poussière, matériel haute pression) pour un
+                        résultat optimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes - Syndics</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Comment établissez-vous le coût pour une copropriété ?</button>
+                    <div class="faq-answer">
+                        <p>Le tarif est établi sur base de : surface des parties communes, nombre d'étages/ascenseurs,
+                            fréquence souhaitée, spécificités techniques, et accessibilité. Nous fournissons un devis
+                            détaillé par poste.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Pouvez-vous intervenir en dehors des heures de pointe ?</button>
+                    <div class="faq-answer">
+                        <p>Absolument. Nous adaptons nos horaires pour minimiser les perturbations : tôt le matin, en
+                            soirée, ou le week-end. Nous travaillons également pendant les heures creuses de la journée.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment gérez-vous les demandes spécifiques des copropriétaires
+                        ?</button>
+                    <div class="faq-answer">
+                        <p>Nous mettons en place un système de remontée d'informations via le syndic. Un formulaire
+                            standardisé permet de centraliser les demandes que nous traitons selon leur urgence et
+                            faisabilité.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous des contrats d'entretien annuel ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, avec avantages : tarif préférentiel, planning annuel établi, priorité sur les
+                            interventions, révision annuelle incluse, et flexibilité pour ajustements trimestriels.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment se passe la gestion des clés et accès ?</button>
+                    <div class="faq-answer">
+                        <p>Nous utilisons un système sécurisé : double des clés sous scellé, registre de prêt/retour,
+                            agents identifiés, et possibilité de badges électroniques si l'immeuble en est équipé.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Êtes-vous assurés pour les dommages éventuels ?</button>
+                    <div class="faq-answer">
+                        <p>Oui, nous disposons d'une assurance responsabilité civile professionnelle de 2.500.000€,
+                            couvrant tous les dommages matériels accidentels. Certificat disponible sur demande.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section-white">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Une copropriété propre augmente la valeur immobilière</h2>
+                <p>Offrez à vos résidents un cadre de vie agréable tout en préservant la valeur du patrimoine. Notre
+                    service spécialisé s'adapte aux besoins spécifiques de chaque copropriété.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="openChatbot('copropriete')">
+                        <i class="fas fa-building"></i> Devis pour copropriété
+                    </button>
+                    <a href="../contact.html" class="btn btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Visite d'évaluation
+                    </a>
+                    <a href="tel:+32478951269" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Urgence copropriété
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-info-circle"></i> Audit gratuit - Références syndics disponibles - Interventions
+                    7j/7
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    
+    <!-- WhatsApp Flottant -->
+    
+    <div id="footer-container"></div>
+
+    <!-- Chatbot Container -->
+
+    <!-- WhatsApp Float -->
+
+    <!-- JavaScript -->
+
+    <script>
+        // Script spécifique pour la page copropriétés
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animation pour les éléments
+            const syndicItems = document.querySelectorAll('.syndic-item');
+            syndicItems.forEach(item => {
+                item.style.animationDelay = (Math.random() * 0.5) + 's';
+            });
+
+            // Animation des statistiques
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const finalValue = stat.textContent;
+                let current = 0;
+                const increment = finalValue.includes('+') ? 1 : parseInt(finalValue) / 60;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= parseInt(finalValue)) {
+                        stat.textContent = finalValue;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + (finalValue.includes('+') ? '+' : '');
+                    }
+                }, 30);
+            });
+
+            // Gestion des fréquences
+            const frequencyBadges = document.querySelectorAll('.frequency-badge');
+            frequencyBadges.forEach(badge => {
+                badge.addEventListener('mouseenter', function () {
+                    const type = this.classList.contains('frequency-daily') ? 'Quotidien' :
+                        this.classList.contains('frequency-weekly') ? 'Hebdomadaire' : 'Mensuel';
+                    this.title = `Fréquence : ${type}`;
+                });
+            });
+
+            // Calculatrice de devis simplifiée
+            document.querySelector('[onclick*="copropriete"]').addEventListener('click', function () {
+                setTimeout(() => {
+                    const units = prompt("Combien de lots dans la copropriété ?");
+                    const surface = prompt("Surface des parties communes (m²) ?");
+                    if (units && surface) {
+                        const estimate = Math.round((parseInt(surface) * 0.8) + (parseInt(units) * 5));
+                        showNotification(`Devis estimé : ~${estimate}€/mois pour ${surface}m² et ${units} lots.`, 'info');
+                    }
+                }, 1000);
+            });
+        });
+
+        function showNotification(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-bell"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+
+            setTimeout(() => toast.classList.add('show'), 100);
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+
+        // Fonction pour afficher les détails de fréquence
+        function showFrequencyDetails(frequency) {
+            const details = {
+                'daily': 'Nettoyage quotidien pour les zones à fort passage (halls, ascenseurs)',
+                'weekly': 'Nettoyage hebdomadaire pour les zones de circulation régulière',
+                'monthly': 'Entretien mensuel pour les zones techniques et peu fréquentées'
+            };
+
+            if (details[frequency]) {
+                showNotification(details[frequency], 'info');
+            }
+        }
+    </script>
+
+    <style>
+        .toast-notification {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #1a365d;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            max-width: 350px;
+        }
+
+        .toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-notification.success {
+            background: #059669;
+        }
+
+        .toast-notification.info {
+            background: #8b5cf6;
+        }
+
+        .toast-notification i {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description-content,
+        .stats-grid,
+        .clients-grid,
+        .frequency-table,
+        .included-grid,
+        .method-steps,
+        .faq-list,
+        .cta-box {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Animation pour les cartes de statistiques */
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation pour le tableau */
+        .table-row {
+            transition: background-color 0.2s ease;
+        }
+
+        .table-row:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Badges interactifs */
+        .client-tag {
+            cursor: default;
+            transition: transform 0.2s ease;
+        }
+
+        .client-tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Indicateur visuel pour les statistiques */
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+        }
+    </style>
+    <script src="/public/js/app.js" defer></script>
+
+    <!-- FAQ STYLES + JAVASCRIPT -->
+    <style>
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #2C5AA0;
+            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.1);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1f2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.9rem;
+            color: #2C5AA0;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+        .faq-item.is-open .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.is-open .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .faq-answer p {
+            color: #4b5563;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+    <script>
+    console.log('🔧 FAQ JavaScript chargé');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            console.log('📊 FAQ items:', faqItems.length);
+            if (faqItems.length === 0) return;
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.faq-question');
+                if (!question) return;
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const wasOpen = item.classList.contains('is-open');
+                    faqItems.forEach(otherItem => otherItem.classList.remove('is-open'));
+                    if (!wasOpen) {
+                        item.classList.add('is-open');
+                        console.log('✅ FAQ', index + 1, 'ouverte');
+                    }
+                });
+            });
+            console.log('✅ FAQ OK');
+        }, 300);
+    });
+    </script>
+
+</body>
+
+</html>
