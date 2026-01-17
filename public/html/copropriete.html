@@ -11,7 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/services.css">
     <link rel="stylesheet" href="../css/components/navbar.css">
-    
+
     <link rel="stylesheet" href="/public/css/components/whatsapp.css">
 
     <!-- Font Awesome -->
@@ -483,7 +483,7 @@
             color: #f59e0b;
         }
     </style>
-    </head>
+</head>
 
 <body>
     <!-- Navbar Container -->
@@ -894,9 +894,9 @@
     </section>
 
     <!-- Footer Container -->
-    
+
     <!-- WhatsApp Flottant -->
-    
+
     <div id="footer-container"></div>
 
     <!-- Chatbot Container -->
@@ -1090,7 +1090,7 @@
             background: linear-gradient(90deg, #8b5cf6, #a78bfa);
         }
     </style>
-    <script src="/public/js/app.js" defer></script>
+    <script src="../../public/js/app.js" defer></script>
 
     <!-- FAQ STYLES + JAVASCRIPT -->
     <style>
@@ -1100,13 +1100,15 @@
             border-radius: 12px;
             overflow: hidden;
             background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
+
         .faq-item:hover {
             border-color: #2C5AA0;
             box-shadow: 0 4px 8px rgba(44, 90, 160, 0.1);
         }
+
         .faq-question {
             width: 100%;
             padding: 1.25rem 1.5rem;
@@ -1122,9 +1124,11 @@
             align-items: center;
             transition: background 0.3s;
         }
+
         .faq-question:hover {
             background: #f9fafb;
         }
+
         .faq-question::after {
             content: '▼';
             font-size: 0.9rem;
@@ -1132,19 +1136,23 @@
             transition: transform 0.3s ease;
             margin-left: 1rem;
         }
+
         .faq-item.is-open .faq-question::after {
             transform: rotate(180deg);
         }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease, padding 0.4s ease;
             padding: 0 1.5rem;
         }
+
         .faq-item.is-open .faq-answer {
             max-height: 500px;
             padding: 0 1.5rem 1.25rem;
         }
+
         .faq-answer p {
             color: #4b5563;
             line-height: 1.7;
@@ -1152,28 +1160,28 @@
         }
     </style>
     <script>
-    console.log('🔧 FAQ JavaScript chargé');
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            console.log('📊 FAQ items:', faqItems.length);
-            if (faqItems.length === 0) return;
-            faqItems.forEach((item, index) => {
-                const question = item.querySelector('.faq-question');
-                if (!question) return;
-                question.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const wasOpen = item.classList.contains('is-open');
-                    faqItems.forEach(otherItem => otherItem.classList.remove('is-open'));
-                    if (!wasOpen) {
-                        item.classList.add('is-open');
-                        console.log('✅ FAQ', index + 1, 'ouverte');
-                    }
+        console.log('🔧 FAQ JavaScript chargé');
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const faqItems = document.querySelectorAll('.faq-item');
+                console.log('📊 FAQ items:', faqItems.length);
+                if (faqItems.length === 0) return;
+                faqItems.forEach((item, index) => {
+                    const question = item.querySelector('.faq-question');
+                    if (!question) return;
+                    question.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const wasOpen = item.classList.contains('is-open');
+                        faqItems.forEach(otherItem => otherItem.classList.remove('is-open'));
+                        if (!wasOpen) {
+                            item.classList.add('is-open');
+                            console.log('✅ FAQ', index + 1, 'ouverte');
+                        }
+                    });
                 });
-            });
-            console.log('✅ FAQ OK');
-        }, 300);
-    });
+                console.log('✅ FAQ OK');
+            }, 300);
+        });
     </script>
 
 </body>
